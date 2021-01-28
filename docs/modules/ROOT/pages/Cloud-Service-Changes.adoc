@@ -69,8 +69,13 @@ in the code and/or scripts.
 *Appveyor*
 
 The appveyor log shows that there is an error in CMakeLists.txt.
-`add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})` should read:
-`add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})`
+----
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})
+---- 
+should read:
+----
+add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})
+----
 
 image:build.errors/1.appveyor.error.jpg[1.appveyor.error.jpg]
 

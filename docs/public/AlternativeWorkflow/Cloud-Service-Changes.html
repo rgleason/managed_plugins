@@ -251,9 +251,20 @@ in the code and/or scripts.</p>
 <p><strong>Appveyor</strong></p>
 </div>
 <div class="paragraph">
-<p>The appveyor log shows that there is an error in CMakeLists.txt.
-<code>add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})</code> should read:
-<code>add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})</code></p>
+<p>The appveyor log shows that there is an error in CMakeLists.txt.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>should read:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})</pre>
+</div>
 </div>
 <div class="paragraph">
 <p><span class="image"><img src="_images/build.errors/1.appveyor.error.jpg" alt="1.appveyor.error.jpg"></span></p>
