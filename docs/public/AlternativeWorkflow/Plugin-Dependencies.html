@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: Alternative Managed Workflow Documentation</title>
-    <link rel="canonical" href="https://localhost:8080/AlternativeWorkflow/index.html">
+    <link rel="canonical" href="https://localhost:8080/AlternativeWorkflow/Plugin-Dependencies.html">
     <meta name="generator" content="Antora 2.3.4">
     <link rel="stylesheet" href="../assets/css/site.css">
     <script>var uiRootPath = '../assets'</script>
@@ -66,7 +66,7 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="index.html">Using the Alternative Managed Workflow</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -105,7 +105,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="Useful-Stuff.html">Useful information</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="Plugin-Dependencies.html">Plugin Dependencies</a>
   </li>
 </ul>
@@ -138,10 +138,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="index.html">Alternative Managed Workflow for OpenCPN plugins</a></li>
-    <li><a href="index.html">Using the Alternative Managed Workflow</a></li>
+    <li><a href="Plugin-Dependencies.html">Plugin Dependencies</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="file:///C:/Users/Mike/Documents/GitHub/managed_plugins//docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="file:///C:/Users/Mike/Documents/GitHub/managed_plugins//docs/modules/ROOT/pages/Plugin-Dependencies.adoc">Edit this Page</a></div>
 </div>
   <div class="content">
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
@@ -149,105 +149,50 @@
 </aside>
 <article class="doc">
 <div class="sect1">
-<h2 id="managed-plugins-for-opencpn"><a class="anchor" href="#managed-plugins-for-opencpn"></a>Managed Plugins for OpenCPN</h2>
+<h2 id="plugin-dependencies"><a class="anchor" href="#plugin-dependencies"></a>Plugin dependencies</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This guide should be read alongside the README files in the
-<a href="https://github.com/Rasbats/ShipDriver_pi">ShipDriver repository</a>.</p>
-</div>
-<div class="paragraph">
-<p>A simplified guide is available as a
-<a href="https://github.com/Rasbats/managed_plugins/blob/main/cheatsheet/Managed.Workflow.Cheat.Sheet.pdf">cheat
-sheet</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="the-overall-managed-plugin-flow"><a class="anchor" href="#the-overall-managed-plugin-flow"></a>The overall managed plugin flow</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>A managed plugin becomes available for an OpenCPN user in the Plugins
-options dialog. Here, a number of plugins are available for users so
-they can just click on a plugin to install it. The managed plugins
-workflow is the way a plugin becomes available for users in this UI
-dialog.</p>
-</div>
-<div class="paragraph">
-<p>In general, plugin code flows like this:</p>
+<p>Plugins must not depend on external packages like Linux .deb or MacOS
+homebrew packages to work (since end users don’t have them installed).
+This means that a plugin which depends on an external library not
+available by just installing OpenCPN must handle this in various other
+ways like:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Source code is stored and eventually tagged and released on Github</p>
+<p>Rebuild from source. This is the only option in the flatpak case.
+OTOH, the flatpak runtime is quite large and contains a lot of common
+libraries.</p>
 </li>
 <li>
-<p>As soon as a change is committed a number of builder services build
-the code for around 10 platforms.</p>
+<p>Link statically. Preliminary findings are that this works on MacOS but
+not in Debian; Debian static libs seems to be compiled without -fPIC
+which means the they cannot be linked into a shared library. YMMV.</p>
 </li>
 <li>
-<p>The compiled plugins are stored on cloudsmith. Here, they get a url
-which can be used to download them.</p>
-</li>
-<li>
-<p>The builds also produce
- <a href="Metadata-Flow.html" class="page">metadata files</a>
-with plugin data such as name, platform, various info and the
-download URL.</p>
-</li>
-<li>
-<p>The metadata files are used to create a catalog. This catalog is the
-underpinning for the list of plugins in the OpenCPN plugin dialog.</p>
+<p>Bundle the dynamic library. By default. linux has an RPATH which
+points to both the plugin directory and it’s parent. This means that a
+library .so file bundled in any of these locations will be used by the
+plugin.</p>
 </li>
 </ul>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="introduction"><a class="anchor" href="#introduction"></a>Introduction</h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>Alec Leamas is the main architect of the managed plugin system for
-OpenCPN. His guide is
-<a href="https://github.com/leamas/OpenCPN/wiki">here</a>.</p>
+<p>The photolayer_pi plugin contains examples on all these strategies. The
+proj and libgeotiff libs are rebuilt from sources. The libtiff library
+is bundled on Debian and linked statically on MacOS. The ``rebuild from
+source'' is done in libs/geotiff and the flatpak yaml manifest.</p>
 </div>
 <div class="paragraph">
-<p>The
-<a href="https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:developer_manual:pi_installer_summary">OpenCPN Developers Manual</a>
-has extensive documentation for managed plugins but the workflow
-described in the manual differs significantly from the process described
-in this guide.</p>
+<p>To check the dependencies of a plugin there are the otool -L (MacOS) and
+ldd (Linux) tools which lists the runtime dependencies of a plugin. By
+default, these are run on all photolayer macos and debian builds. The
+MacOS output is relatively easy to read while the ldd output probably is
+too messy for regular checks. It might be useful when debugging though.</p>
 </div>
 <div class="paragraph">
-<p>A managed plugin will nearly always start as a `legacy' plugin that
-installs locally on the developers machine. Alec has provided new
-scripts to build a managed version of the plugin for OpenCPN. The legacy
-plugin is the starting point and the purpose of this guide is to
-describe the steps involved. The aim is to simplify the workflow.</p>
-</div>
-<div class="paragraph">
-<p>The reference plugin where the development work has been carried out is
-<a href="https://github.com/Rasbats/shipdriver_pi">ShipDriver</a>
-(Master branch).
-To show the process from the start
-<a href="https://github.com/Rasbats/TideFinder_pi">TideFinder</a> is used as an
-illustration.</p>
-</div>
-<div class="paragraph">
-<p>Mike Rossiter, who developed the ShipDriver and TideFinder plugins,
-assisted by testing the workflow. He has produced this guide to assist
-developers in making a managed plugin. Please report any errors or
-omissions using the issues tab of this GitHub repository.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="the-alternative-workflow"><a class="anchor" href="#the-alternative-workflow"></a>The Alternative Workflow</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><a href="Alternative-Workflow.html" class="page">The Alternative Workflow</a></p>
-</div>
-<div class="paragraph">
-<p><a href="Plugin-Dependencies.html" class="page">A Note on Plugin Dependencies</a></p>
+<p><a href="index.html" class="page">Return to the Home page</a></p>
 </div>
 </div>
 </div>

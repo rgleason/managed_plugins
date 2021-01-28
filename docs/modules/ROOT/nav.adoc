@@ -11,3 +11,4 @@
 * xref:CodeChange.adoc[Code Changes]
 * xref:Local-Build.adoc[Building locally]
 * xref:Useful-Stuff.adoc[Useful information]
+* xref:Plugin-Dependencies.adoc[Plugin Dependencies]

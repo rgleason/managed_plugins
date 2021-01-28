@@ -66,3 +66,4 @@ omissions using the issues tab of this GitHub repository.
 
 xref:Alternative-Workflow.adoc[The Alternative Workflow]
 
+xref:Plugin-Dependencies.adoc[A Note on Plugin Dependencies]
