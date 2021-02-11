@@ -1,6 +1,0 @@
-name: AlternativeWorkflow
-title: Alternative Managed Workflow for OpenCPN plugins
-version: master
-start_page: ROOT:index.adoc
-nav:
-- modules/ROOT/nav.adoc
