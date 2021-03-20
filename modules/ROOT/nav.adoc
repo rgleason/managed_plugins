@@ -1,0 +1,18 @@
+* xref:Home.adoc[Home]
+* xref:Alternative-Workflow.adoc[The alternative workflow]
+* CI services
+** xref:Cloudsmith.adoc[Cloudsmith]
+** xref:CircleCI.adoc[CircleCI]
+** xref:Appveyor.adoc[Appveyor]
+** xref:Github-Actions.adoc[Github Actions]
+** xref:Drone.adoc[drone.io]
+** xref:Cloud-Service-Changes.adoc[Cloud Services Configuration]
+* xref:CodeChange.adoc[Code Changes]
+* xref:Local-Build.adoc[Local Builds]
+* xref:Plugins-Catalog-Github-Integration.adoc[Automatic Git Push of Metadata]
+* Notes:
+** xref:GitHub.adoc[Github: Source repository]
+** xref:Plugin-Dependencies.adoc[Plugin Dependencies]
+** xref:Useful-Stuff.adoc[Useful Stuff]
+** xref:Linux---finding-lib***.so-contents.adoc[Locating linux so-lib]
+** xref:Metadata-Flow.adoc[Metadata Flow]

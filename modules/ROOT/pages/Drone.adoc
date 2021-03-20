@@ -1,0 +1,26 @@
+= Setting up Drone
+
+*Register using your GitHub login*
+
+*After logging in Drone has a list of your GitHub repos. Activate
+TideFinder_pi*
+
+image:1.png[1.png]
+
+Activate the repository.
+
+image:2.png[2.png]
+
+The settings page appears. The only area which needs editing is
+'Secrets'. These are called 'Environment Variables' in Appveyor and
+CircleCI.
+
+image:3.png[3.png]
+
+Add the Secrets. It is easiest to copy these from Appveyor.
+
+image:4.png[4.png]
+
+And save the settings.
+
+image:5.png[5.png]
