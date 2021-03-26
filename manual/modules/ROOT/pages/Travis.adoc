@@ -17,4 +17,4 @@ files.*
 
 image:3.travis.jpg[3.travis.jpg]
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

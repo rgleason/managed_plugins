@@ -1,4 +1,4 @@
-== Alternative Workflow for Managed Plugins
+== Shipdriver Workflow for Managed Plugins
 
 == Cloud Services
 

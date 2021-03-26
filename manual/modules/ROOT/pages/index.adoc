@@ -77,8 +77,8 @@ assisted by testing the workflow. He has produced this guide to assist
 developers in making a managed plugin. Please report any errors or
 omissions using the issues tab of this GitHub repository.
 
-== The Alternative Workflow
+== The Shipdriver Workflow
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
 
 xref:Plugin-Dependencies.adoc[A Note on Plugin Dependencies]

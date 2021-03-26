@@ -165,4 +165,4 @@ The new TideFinder metadata files have been added to your
 OpenCPN/plugins fork Beta branch. A PR results in updating the Beta
 catalog of OpenCPN/plugins, if it is accepted.
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

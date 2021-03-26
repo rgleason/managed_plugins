@@ -16,4 +16,4 @@ image:3.appveyor.jpg[]
 
 image:4.appveyor.jpg[]
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

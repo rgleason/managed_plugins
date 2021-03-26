@@ -33,4 +33,4 @@ image:6.circleci.jpg[]
 Circleci requires user to manually request a MacOS builder before it can
 be used. This process has been working flawlessly.
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
