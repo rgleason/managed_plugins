@@ -1,6 +1,7 @@
 site:
   title: Alternative Managed Workflow Documentation
   url: https://localhost:8080
+  start_page: AlternativeWorkflow:ROOT:index.adoc
 
 content:
   sources:
