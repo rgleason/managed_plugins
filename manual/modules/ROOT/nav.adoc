@@ -1,5 +1,5 @@
-* xref:index.adoc[Using the Alternative Managed Workflow]
-* xref:Alternative-Workflow.adoc[The Alternative Workflow]
+* xref:index.adoc[Using the Shipdriver Managed Workflow]
+* xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
 * xref:Metadata-Flow.adoc[Metadata Files]
 * xref:Appveyor.adoc[Appveyor]
 * xref:CircleCI.adoc[CircleCI]

@@ -162,5 +162,3 @@ revoked.
 == Bugs
 
 Probably plenty.
-
-{empty}[[Return to the main guide|Alternative Workflow]]
