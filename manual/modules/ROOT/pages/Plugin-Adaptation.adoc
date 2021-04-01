@@ -89,4 +89,4 @@ substitutions.
 
 Just one substitution.
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

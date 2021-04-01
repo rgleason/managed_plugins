@@ -47,4 +47,4 @@ mdc.SetTextForeground(m_text_color);
 //mdc.SetTextBackground(wxTRANSPARENT);`  ******* Removed this line to get openGL working in otcurrent_pi
 ....
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

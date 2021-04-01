@@ -6,7 +6,7 @@ content:
   sources:
   - url: ../
     branches: HEAD
-    start_path: docs/
+    start_path: manual/
 
 ui:
   output_dir: assets

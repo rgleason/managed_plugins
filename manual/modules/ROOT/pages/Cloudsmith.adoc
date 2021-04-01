@@ -94,4 +94,4 @@ image:10cloudsmith.jpg[10cloudsmith.jpg]
 copy/pasted to a file on your PC for use later.*
 image:11cloudsmith.jpg[11cloudsmith.jpg]
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

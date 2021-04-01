@@ -22,4 +22,4 @@ README-git.md. The basic idea is that the developer has a clone of the
 plugins project, and that metadata from the builds is automatically
 pushed to this clone. See the file README-git.md for details.
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

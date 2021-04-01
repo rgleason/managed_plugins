@@ -5,7 +5,7 @@ made the GitHub TideFinder repo can be updated with the file changes.
 
 == GitHub
 
-The alternative workflow simplifies the process of updating the plugin
+The shipdriver workflow simplifies the process of updating the plugin
 metadata files in 
 https://github.com/opencpn/plugins[OpenCPN/plugins].
 At the same time as installers for the TideFinder plugin are made the
@@ -100,4 +100,4 @@ image:build.errors/3.circleci.error.jpg[3.circleci.error.jpg]
 Again this is due to copying files on Windows. Once set as above the
 build will work.
 
-xref:Alternative-Workflow.adoc[The Alternative Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
