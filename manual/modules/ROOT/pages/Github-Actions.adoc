@@ -1,0 +1,56 @@
+= Github Actions
+
+Github Actions (GA) are used to build flatpak plugins for the new
+runtime 20.08, and also for aarch64. These builds uses Leamas's hardware
+and have restricted access. There are two options: disabling these
+builds or enabling them.
+
+In any case: disable all actions in the Github UI, in _Settings |
+Actions._ GA will otherwise fail in each build, causing the dreaded
+'failed' icon. If the Flatpak builds should not be configured, this is
+the only step necessary.
+
+To enable and configure these builds:
+
+. Request access to the builder, for example in a ticket to
+https://github.com/leamas/shipdriver_pi/[https://github.com/leamas/shipdriver_pi/].
+. When approved, you will have write access in the
+https://github.com/leamas-ga[https://github.com/leamas-ga] group. In
+this group, create a *private* repository with a name similar, but not
+the same as the plugin repo. For example shipdriver-mike, related to the
+main repo shipdriver_pi. Keep the repo empty.
+. Make the new repo a mirror copy of your own, something like
++
+....
+ $ git clone --bare https://github.com/exampleuser/old-repository.git
+ $ cd old-repository.git
+ $ git push --mirror git@github.com:leamas-ga/new-repository.git
+....
+. Set up environments variables as required. These are called secrets
+and are configured in _Settings | Secrets_.
+* To enable Cloudsmith uploads: define CLOUDSMITH_API_KEY.
+* To enable the git push functionality as described in the
+link:/Rasbats/managed_plugins/wiki/OpenCPN-Plugins-Catalog-and-Github-Integration[git
+push page]: define GIT_REPO and GIT_KEY_PASSWORD
+* To use
+link:/Rasbats/managed_plugins/wiki/Custom-cloudsmith-repositories[custom
+cloudsmith repositores]: define CLOUDSMITH_UNSTABLE_REPO,
+CLOUDSMITH_BETA_REPO, CLOUDSMITH_STABLE_REPO
+. In the new repository, create a remote which refers to the old,
+something like
++
+....
+  $ cd new-repository
+  $ git remote add upstream https://github.com/exampleuser/old-repository.git
+....
+
+This is the end of the initial setup. To actually make a build, import
+the changes from the old repo and push them to the new (the one in
+leamas-ga):
+
+....
+$ cd new-repository
+$ git remote update upstream
+$ git pull upstream master
+$ git push origin master:master
+....

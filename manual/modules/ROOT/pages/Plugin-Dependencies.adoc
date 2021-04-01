@@ -27,5 +27,3 @@ ldd (Linux) tools which lists the runtime dependencies of a plugin. By
 default, these are run on all photolayer macos and debian builds. The
 MacOS output is relatively easy to read while the ldd output probably is
 too messy for regular checks. It might be useful when debugging though.
-
-xref:index.adoc[Return to the Home page]
