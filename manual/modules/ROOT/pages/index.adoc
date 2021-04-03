@@ -15,6 +15,10 @@ can be applied to any OpenCPN plugin. The templates provide
   automatically into git.
 * Well-defined local builds of tarballs which can be imported
 
+Usage of these templates on a configured plugin is documented in the
+xref:usage.adoc[usage page]. These instructions are shipped with the
+plugin in the file `INSTALL.md`.
+
 The following guide illustrates how these templates can be applied 
 from scratch to a plugin.
 
