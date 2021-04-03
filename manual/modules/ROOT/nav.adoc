@@ -17,4 +17,3 @@
 * xref:Local-Build.adoc[Local Builds]
 * xref:Catalog-Github-Integration.adoc[Automatic Git Push of Metadata]
 * xref:Useful-Stuff.adoc[Useful information]
-* xref:Plugin-Dependencies.adoc[Plugin Dependencies]
