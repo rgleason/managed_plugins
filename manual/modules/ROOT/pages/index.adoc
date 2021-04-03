@@ -11,9 +11,13 @@ can be applied to any OpenCPN plugin. The templates provide
 * Generation of tarballs which can be used by the plugin installer
 * Uploading of tarballs to Cloudsmith
 * Generation of XML metadata with correct download urls and tarball chacksum
-* Support for making PRs to the plugins project by committing metadata
-  automatically into git.
+* Support for making PRs to the plugins project (i. e., the catalog) by
+  committing metadata automatically into git.
 * Well-defined local builds of tarballs which can be imported
+
+Usage of these templates on a configured plugin is documented in the
+xref:usage.adoc[usage page]. These instructions are shipped with the
+plugin in the file `INSTALL.md`.
 
 The following guide illustrates how these templates can be applied 
 from scratch to a plugin.
