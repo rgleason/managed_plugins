@@ -1,0 +1,5 @@
+name: managed-plugins
+title: Managed Plugins Manual
+version: '0.0.1'
+nav: 
+- modules/ROOT/nav.adoc

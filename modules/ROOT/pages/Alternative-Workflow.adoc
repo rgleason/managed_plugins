@@ -1,0 +1,57 @@
+= Alternative Workflow for Managed Plugins
+
+== Cloud Services
+
+The following free opensource accounts/services are required:
+
+* Deployment Repository
+https://cloudsmith.io/|https://cloudsmith.io/
+* Build Tool https://circleci.com/|https://circleci.com/
+* Build Tool https://www.appveyor.com/|https://www.appveyor.com/
+* Build Tool https://drone.io/|https://drone.io/
+* Source Code Repository https://github.com/|https://github.com/
+
+Use the links below to see how these services are set up. Probably best
+to proceed in this order to avoid retracing steps.
+
+===  xref:Cloudsmith.adoc[Cloudsmith]
+
+This entity hosts the tarballs and metadata files that form the heart of
+the ed plugin system.
+
+===  xref:CircleCI.adoc[CircleCI]
+
+The purpose of the managed system is to produce installers for multiple
+operating systems. CircleCI hosts virtual machines for a number of OS.
+
+===  xref:Drone.adoc[drone.io]
+
+Hosts a virtual machine for the creation of installers for the Raspbian
+ARMHF system.
+
+===  xref:Appveyor.adoc[Appveyor]
+
+A virtual machine for making Windows OS installers.
+
+===  xref:Plugin-Adaptation.adoc[Plugin Adaptation]
+
+Go to this section for a description of the additional files needed to
+enable the plugin to be compiled and hosted by the cloud services. Also
+the changes to CMakeLists.txt for the plugin and the changes to the
+source code.
+
+===  xref:GitHub.adoc[GitHub]
+
+For this guide the plugin
+[[TideFinder_pi|https://github.com/Rasbats/TideFinder_pi]] will be used.
+Some changes to the settings for the repository on GitHub are needed.
+
+===  xref:Cloud-Service-Changes.adoc[Cloud Service Changes]
+
+Environment variables are added to appveyor, circleci and Drone. Changes
+are needed for the GitHub TideFinder and Plugins repositories.
+
+===  xref:Local-Build.adoc[Local Build]
+
+A local build of the plug can be carried out using the tools described
+on this page.

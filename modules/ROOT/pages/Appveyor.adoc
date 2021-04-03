@@ -1,0 +1,24 @@
+= Setting up Appveyor
+
+*Sign in with your GitHub account.*
+
+image:1.appveyor.jpg[1.appveyor.jpg]
+
+*New project.*
+
+image:2.appveyor.jpg[2.appveyor.jpg]
+
+*Add.*
+
+image:3.appveyor.jpg[3.appveyor.jpg]
+
+*TideFinder will now appear in the list of projects.*
+
+image:4.appveyor.jpg[4.appveyor.jpg]
+
+Select 'Environment' and add the variables. These are the same ones used
+in CircleCI.
+
+image:5.appveyor.jpg[5.appveyor.jpg]
+
+Remember to save the variables.
