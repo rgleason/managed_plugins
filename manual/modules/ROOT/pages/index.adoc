@@ -19,7 +19,7 @@ Usage of these templates on a configured plugin is documented in the
 xref:usage.adoc[usage page]. These instructions are shipped with the
 plugin in the file `INSTALL.md`.
 
-The following guide illustrates how these templates can be applied 
+The following guide illustrates how these templates can be applied
 from scratch to a plugin.
 
 This guide should be read alongside the README files in the
@@ -54,14 +54,14 @@ underpinning for the list of plugins in the OpenCPN plugin dialog.
 == Introduction
 
 Alec Leamas is the main architect of the managed plugin system for
-OpenCPN. His guide is 
+OpenCPN. His guide is
 https://github.com/leamas/OpenCPN/wiki[here].
 
-The 
-https://opencpn.org/wiki/dokuwiki/doku.php?id=opencpn:developer_manual:pi_installer_summary[OpenCPN Developers Manual]
-has extensive documentation for managed plugins but the workflow
-described in the manual differs significantly from the process described
-in this guide.
+The
+xref:ocpn-dev-manual::/pm-overview-deployment.adoc[OpenCPN Developers Manual]
+has extensive general documentation for managed plugins. It also describes
+the two alternative template systems testplugin and shipdriver. This
+document provides more info on the shipdriver setup an workflow.
 
 A managed plugin will nearly always start as a `legacy' plugin that
 installs locally on the developers machine. Alec has provided new
@@ -70,7 +70,7 @@ plugin is the starting point and the purpose of this guide is to
 describe the steps involved. The aim is to simplify the workflow.
 
 The reference plugin where the development work has been carried out is
-https://github.com/Rasbats/shipdriver_pi[ShipDriver] 
+https://github.com/Rasbats/shipdriver_pi[ShipDriver]
 (Master branch).
 To show the process from the start
 https://github.com/Rasbats/TideFinder_pi[TideFinder] is used as an

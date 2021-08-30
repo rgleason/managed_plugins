@@ -9,6 +9,9 @@ content:
     branches: HEAD
     start_path: manual/
 
+  - url: https://github.com/opencpn-manuals/development.git
+    branches: HEAD
+
 ui:
   output_dir: assets
   bundle:
