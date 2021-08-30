@@ -1,0 +1,36 @@
+== CircleCI
+
+Sign up with GitHub at this page:
+http://circleci.com/signup/[http://circleci.com/signup/]
+
+image:1.circleci.jpg[]
+
+*Find your way to the Dashboard*
+
+image:2.circleci.jpg[]
+
+*You need to follow a project. GitHub has a list of your GitHub repos.*
+
+image:3.circleci.jpg[]
+
+*Config.yml has already been written. Use existing.*
+
+image:4.circleci.jpg[]
+
+== Set the Environment Variables for Appveyor
+
+image:appveyor/1.enviro.appveyor.jpg[]
+
+== Start building
+
+image:5.circleci.jpg[]
+
+*The build fails at the moment because GitHub was not updated with the
+changed TideFinder files.*
+
+image:6.circleci.jpg[]
+
+Circleci requires user to manually request a MacOS builder before it can
+be used. This process has been working flawlessly.
+
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

@@ -1,0 +1,19 @@
+== Appveyor
+
+*Sign in with your GitHub account.*
+
+image:1.appveyor.jpg[]
+
+*New project.*
+
+image:2.appveyor.jpg[]
+
+*Add.*
+
+image:3.appveyor.jpg[]
+
+*TideFinder will now appear in the list of projects.*
+
+image:4.appveyor.jpg[]
+
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
