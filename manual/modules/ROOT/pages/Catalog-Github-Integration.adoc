@@ -44,13 +44,13 @@ $ git push -f origin auto:auto          # Unconditionally overwrite the github b
 . Run the script _ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url can be found in the Github UI:
-
++
 image::github/1.plugins.jpg[1.plugins.jpg]
-
++
 . Dont forget the password...
 . The script will create an encrypted private + a public key in the
 TideFinder _ci_ directory. Commit and push these to Github:
-
++
 ....
 $ git add ci/*.enc ci/*.pub
 $ git commit -m "Add git deployment key."
