@@ -28,31 +28,37 @@ OpenCPN/plugins fork:
 branch and create a new on top of master:
 +
 ....
-$ git branch -D auto                    # If it exists, ignore possible error messages
-$ git remote update upstream            # Pick up latest version of upstream
-$ git checkout -b auto upstream/master  # Create new branch on top of master:
-$ git push -f origin auto:auto          # push to clone, overwrite old branch.
+$ git branch -D auto ①
+$ git remote update upstream ②
+$ git checkout -b auto upstream/master ③
+$ git push -f origin auto:auto ④
 ....
 * Builds targeting the *beta catalog* is handled in a similar way:
 +
 ....
-$ git branch -D auto                    # Drop the auto branch completely
-$ git remote update upstream            # Better safe than sorry
-$ git checkout -b auto upstream/Beta    # Create a new auto branch based on Beta
-$ git push -f origin auto:auto          # Unconditionally overwrite the github branch
+$ git branch -D auto ①
+$ git remote update upstream ②
+$ git checkout -b auto upstream/Beta ③
+$ git push -f origin auto:auto ④
 ....
++
+① Remove any existing auto branch, disregard error messages. +
+② Make sure our data about the github catalog is updated. +
+③ Create a new branch on top of master or Beta +
+④ Unconditionally overwrite the github branch
+
 . Run the script _ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
-+
+ 
 . Dont forget the password...
 . The script will create an encrypted private + a public key in the
-TideFinder _ci_ directory. Commit and push these to Github:
+TideFinder _build-deps_ directory. Commit and push these to Github:
 +
 ....
-$ git add ci/*.enc ci/*.pub
+$ git add build-deps/*.enc build-deps/*.pub
 $ git commit -m "Add git deployment key."
 $ git push origin master:master
 ....
@@ -65,6 +71,10 @@ image:github/10.deploy.key.jpg[10.deploy.key.jpg]
 After adding the key things should look like:
 +
 image:github/9.deploy.key.jpg[9.deploy.key.jpg]
++
+Note that despite images, the public key is indeed public; there is no
+need to keep it secret.
+
 . Set environment variables in all builders like Circleci, drone.io and
 Appveyor:
 * GIT_KEY_PASSWORD: Password entered to new-credentials.
