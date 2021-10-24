@@ -6,11 +6,11 @@ site:
 content:
   sources:
   - url: ../
-    branches: HEAD
+    branches: asciidoc
     start_path: manual/
 
   - url: https://github.com/opencpn-manuals/development.git
-    branches: HEAD
+    branches: main
 
 ui:
   output_dir: assets
