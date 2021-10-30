@@ -32,6 +32,16 @@ Install build dependencies using something like:
 
 Install runtime and opencpn as described in flatpak/README.md
 
+=== Android
+The templates supports creating tarballs for 32-bit armhf and 64-bit arm64 targets.
+Building these requires a local installation of the Android Native Development Kid (NDK)
+which can be found at https://developer.android.com/ndk/downloads[].
+
+The build needs to locate the installed NDK. By default, it uses the path _/opt/android/ndk_.
+This can be utilized by creating a symlink, something like `sudo ln -s /opt/android/android-ndk-* 
+/opt/android/ndk`. As an alternative, the NDK_HOME environment variable can be used. 
+It should contain the complete path to the NDK directory.
+ 
 === MacOS
 
 Use the ci script, which just installs the build deps and configures
