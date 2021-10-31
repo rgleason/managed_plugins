@@ -41,6 +41,13 @@ The build needs to locate the installed NDK. By default, it uses the path _/opt/
 This can be utilized by creating a symlink, something like `sudo ln -s /opt/android/android-ndk-* 
 /opt/android/ndk`. As an alternative, the NDK_HOME environment variable can be used. 
 It should contain the complete path to the NDK directory.
+
+Android builds also needs an updated cmake version. In general, the NDK and cmake needs to be
+synchronized -- an old cmake version is not likely to work with an updated NDK. This is an
+issue on some platforms, notably all Debian-based which includes Ubuntu. The work-around is to
+use python to install the python wheel distributed by Kitware using somehting like 
+`pip install --user cmake`. This requires a working, updated python3 installation.
+
  
 === MacOS
 
