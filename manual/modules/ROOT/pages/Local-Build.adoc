@@ -32,9 +32,27 @@ Install build dependencies using something like:
 
 === Flatpak
 
-Install runtime and opencpn as described in flatpak/README.md
+Building Flatpak requires a Linux host.  The first step is to
+install flatpak as described in https://flatpak.org/setup/
+
+Proceed by installing _flatpak-builder_. Most distributions
+including Ubuntu and Fedora have this packaged, making it possible
+to install using tools like _apt(8)_ or _dnf(8)_.
+
+Then install the build dependencies using something like 
+
+    $ flatpak remote-add --user --if-not-exists \
+          flathub https://flathub.org/repo/flathub.flatpakrepo
+    $ flatpak install --user flathub org.freedesktop.Platform//20.08
+    $ flatpak install --user flathub org.freedesktop.Sdk//20.08
+    $ flatpak install --user flathub org.opencpn.OpenCPN
+    
+20.08 is the runtime version which indeed is 20.08 at the time of
+writing. Review the _flatpak/org.opencpn.*yaml_ file to check this, 
+look for `runtime-version`.
 
 === Android
+
 The templates supports creating tarballs for 32-bit armhf and 64-bit arm64 targets.
 Building these requires a local installation of the Android Native Development Kid (NDK)
 which can be found at https://developer.android.com/ndk/downloads[].
