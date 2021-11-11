@@ -1,6 +1,6 @@
 = Automatic Metadata Git Push
 
-Shipdriver-based plugins have experimental support for pushing metadata
+Shipdriver-based plugins supports pushing metadata
 to a remote git repository. The goal is to simplify the process for
 creating pull requests against
 https://github.com/opencpn/plugins[OpenCPN/plugins].
@@ -159,6 +159,11 @@ $ git push
 The new TideFinder metadata files have been added to your
 OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
 the Beta catalog of OpenCPN/plugins.
+
+== Troubleshooting
+
+The _ci/git-push_ script can be run manually for debugging purposes
+as described in the xref:Local-Build.adoc[Local build page]
 
 == Security
 
