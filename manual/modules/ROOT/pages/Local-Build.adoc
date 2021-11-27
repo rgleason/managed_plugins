@@ -59,4 +59,4 @@ $ ci/circleci-build-macos
 ....
 
 After the initial run the build dependencies are in place and
-configured. Make for example the tarball using `cd build; make tarball`
+configured. Make for example the tarball using `cd build-osx; make tarball`
