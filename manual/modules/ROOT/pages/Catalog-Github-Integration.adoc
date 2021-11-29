@@ -1,6 +1,6 @@
 = Automatic Metadata Git Push
 
-Shipdriver-based plugins have experimental support for pushing metadata
+Shipdriver-based plugins supports pushing metadata
 to a remote git repository. The goal is to simplify the process for
 creating pull requests against
 https://github.com/opencpn/plugins[OpenCPN/plugins].
@@ -49,11 +49,11 @@ $ git push -f origin auto:auto ④
 
 . Run the script _ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
-password. The ssh url, something like \git@github.com:Rasbats/plugins.git, 
+password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
 can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
- 
+
 . Dont forget the password...
 . The script will create an encrypted private + a public key in the
 TideFinder _build-deps_ directory. Commit and push these to Github:
@@ -159,6 +159,11 @@ $ git push
 The new TideFinder metadata files have been added to your
 OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
 the Beta catalog of OpenCPN/plugins.
+
+== Troubleshooting
+
+The _ci/git-push_ script can be run manually for debugging purposes
+as described in the xref:Local-Build.adoc[Local build page]
 
 == Security
 
