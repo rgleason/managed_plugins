@@ -23,6 +23,19 @@ on Github.
 To enable this support which copies metadata from TideFinder to the
 OpenCPN/plugins fork:
 
+. Preparations:
+* Windows users are best off using git-bash. However, invoking the python
+scripts used here does not work out of the box. In git-bash, use the command
+`alias python='winpty python.exe'` as a temporary work around before taking
+more actions. See the https://stackoverflow.com/questions/32597209/[Stack overflow
+question] for more info
+* In the OpenCPN/plugins fork, make sure there is a remote named _upstream_. 
+A oneliner fixes this:
+
+    
+    $ git ls-remote --exit-code upstream &>/dev/null || \
+        git remote add upstream https://github.com/OpenCPN/plugins.git
+
 . Create a branch called _auto_ in the OpenCPN/plugins fork:
 * For builds targeting the *master catalog*: drop possible existing auto
 branch and create a new on top of master:
@@ -53,6 +66,9 @@ password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
 can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
++
+Or, in the OpenCPN/plugins fork, on the command line using 
+`git config --get remote.origin.url`
 
 . Dont forget the password...
 . The script will create an encrypted private + a public key in the
@@ -106,20 +122,21 @@ work with the plugin installer of the main OpenCPN program. In beta and
 production mode they become part of the beta and master catalogs of
 plugins in OpenCPN.
 
-=== Syncing master branch
+=== Syncing branches
 
 Before making the pull request to OpenCPN/plugins make sure your fork of
-this is up to date, and that the remote _upstream_ exists.
+this is up to date.
 https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This
-guide] has been found useful. Or on the CLI (creating the upstream
-remote, the first line, is only required the first time):
+guide] has been found useful. Or on the CLI:
 
 ....
-$ git remote add upstream https://github.com/OpenCPN/plugins.git
 $ git remote update upstream
 $ git checkout master
 $ git rebase upstream/master
+$ git checkout Beta
+$ git rebase upstream/Beta
 ....
+If the Beta branch isn't used, the last two commands can be omitted.
 
 === Master catalog
 
