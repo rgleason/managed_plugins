@@ -60,7 +60,7 @@ $ git push -f origin auto:auto ④
 ③ Create a new branch on top of master or Beta +
 ④ Unconditionally overwrite the github branch
 
-. Run the script _ci/new-credentials_ in the TideFinder repo. The script
+. Run _python ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
 can be found in the Github UI:
@@ -144,6 +144,7 @@ Adding metadata files from the OpenCPN/plugins fork auto branch to the
 master branch goes like this:
 
 ....
+$ git fetch origin auto:auto
 $ git checkout auto
 $ git rebase master
 $ git checkout master
@@ -165,6 +166,7 @@ the master catalog of OpenCPN/plugins.
 If you configured for Beta metadata files you need:
 
 ....
+$ git fetch origin auto:auto
 $ git checkout auto
 $ git rebase Beta
 $ git checkout Beta
