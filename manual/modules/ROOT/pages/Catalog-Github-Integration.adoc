@@ -1,6 +1,6 @@
 = Automatic Metadata Git Push
 
-Shipdriver-based plugins have experimental support for pushing metadata
+Shipdriver-based plugins supports pushing metadata
 to a remote git repository. The goal is to simplify the process for
 creating pull requests against
 https://github.com/opencpn/plugins[OpenCPN/plugins].
@@ -23,36 +23,59 @@ on Github.
 To enable this support which copies metadata from TideFinder to the
 OpenCPN/plugins fork:
 
+. Preparations:
+* Windows users are best off using git-bash. However, invoking the python
+scripts used here does not work out of the box. In git-bash, use the command
+`alias python='winpty python.exe'` as a temporary work around before taking
+more actions. See the https://stackoverflow.com/questions/32597209/[Stack overflow
+question] for more info
+* In the OpenCPN/plugins fork, make sure there is a remote named _upstream_. 
+A oneliner fixes this:
+
+    
+    $ git ls-remote --exit-code upstream &>/dev/null || \
+        git remote add upstream https://github.com/OpenCPN/plugins.git
+
 . Create a branch called _auto_ in the OpenCPN/plugins fork:
 * For builds targeting the *master catalog*: drop possible existing auto
 branch and create a new on top of master:
 +
 ....
-$ git branch -D auto                    # If it exists, ignore possible error messages
-$ git remote update upstream            # Pick up latest version of upstream
-$ git checkout -b auto upstream/master  # Create new branch on top of master:
-$ git push -f origin auto:auto          # push to clone, overwrite old branch.
+$ git branch -D auto ①
+$ git remote update upstream ②
+$ git checkout -b auto upstream/master ③
+$ git push -f origin auto:auto ④
 ....
 * Builds targeting the *beta catalog* is handled in a similar way:
 +
 ....
-$ git branch -D auto                    # Drop the auto branch completely
-$ git remote update upstream            # Better safe than sorry
-$ git checkout -b auto upstream/Beta    # Create a new auto branch based on Beta
-$ git push -f origin auto:auto          # Unconditionally overwrite the github branch
+$ git branch -D auto ①
+$ git remote update upstream ②
+$ git checkout -b auto upstream/Beta ③
+$ git push -f origin auto:auto ④
 ....
-. Run the script _ci/new-credentials_ in the TideFinder repo. The script
-will ask for the ssh url to your plugins fork repo and a secret
-password. The ssh url can be found in the Github UI:
++
+① Remove any existing auto branch, disregard error messages. +
+② Make sure our data about the github catalog is updated. +
+③ Create a new branch on top of master or Beta +
+④ Unconditionally overwrite the github branch
 
+. Run _python ci/new-credentials_ in the TideFinder repo. The script
+will ask for the ssh url to your plugins fork repo and a secret
+password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
+can be found in the Github UI:
++
 image::github/1.plugins.jpg[1.plugins.jpg]
++
+Or, in the OpenCPN/plugins fork, on the command line using 
+`git config --get remote.origin.url`
 
 . Dont forget the password...
 . The script will create an encrypted private + a public key in the
-TideFinder _ci_ directory. Commit and push these to Github:
-
+TideFinder _build-deps_ directory. Commit and push these to Github:
++
 ....
-$ git add ci/*.enc ci/*.pub
+$ git add build-deps/*.enc build-deps/*.pub
 $ git commit -m "Add git deployment key."
 $ git push origin master:master
 ....
@@ -65,6 +88,10 @@ image:github/10.deploy.key.jpg[10.deploy.key.jpg]
 After adding the key things should look like:
 +
 image:github/9.deploy.key.jpg[9.deploy.key.jpg]
++
+Note that despite images, the public key is indeed public; there is no
+need to keep it secret.
+
 . Set environment variables in all builders like Circleci, drone.io and
 Appveyor:
 * GIT_KEY_PASSWORD: Password entered to new-credentials.
@@ -95,20 +122,21 @@ work with the plugin installer of the main OpenCPN program. In beta and
 production mode they become part of the beta and master catalogs of
 plugins in OpenCPN.
 
-=== Syncing master branch
+=== Syncing branches
 
 Before making the pull request to OpenCPN/plugins make sure your fork of
-this is up to date, and that the remote _upstream_ exists.
+this is up to date.
 https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This
-guide] has been found useful. Or on the CLI (creating the upstream
-remote, the first line, is only required the first time):
+guide] has been found useful. Or on the CLI:
 
 ....
-$ git remote add upstream https://github.com/OpenCPN/plugins.git
 $ git remote update upstream
 $ git checkout master
 $ git rebase upstream/master
+$ git checkout Beta
+$ git rebase upstream/Beta
 ....
+If the Beta branch isn't used, the last two commands can be omitted.
 
 === Master catalog
 
@@ -116,6 +144,7 @@ Adding metadata files from the OpenCPN/plugins fork auto branch to the
 master branch goes like this:
 
 ....
+$ git fetch origin auto:auto
 $ git checkout auto
 $ git rebase master
 $ git checkout master
@@ -137,6 +166,7 @@ the master catalog of OpenCPN/plugins.
 If you configured for Beta metadata files you need:
 
 ....
+$ git fetch origin auto:auto
 $ git checkout auto
 $ git rebase Beta
 $ git checkout Beta
@@ -148,6 +178,11 @@ $ git push
 The new TideFinder metadata files have been added to your
 OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
 the Beta catalog of OpenCPN/plugins.
+
+== Troubleshooting
+
+The _ci/git-push_ script can be run manually for debugging purposes
+as described in the xref:Local-Build.adoc[Local build page]
 
 == Security
 
