@@ -1,5 +1,7 @@
 == Appveyor
 
+https://www.appveyor.com/[Appveyor Website]
+
 *Sign in with your GitHub account.*
 
 image:1.appveyor.jpg[]
@@ -16,4 +18,4 @@ image:3.appveyor.jpg[]
 
 image:4.appveyor.jpg[]
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:Overview.adoc[Template overview]

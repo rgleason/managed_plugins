@@ -1,9 +1,11 @@
-== CircleCI
+= CircleCI
+
+https://circleci.com/[CircleCI Website]
 
 Sign up with GitHub at this page:
 http://circleci.com/signup/[http://circleci.com/signup/]
 
-image:1.circleci.jpg[]
+image::../../1.circleci.jpg[]
 
 *Find your way to the Dashboard*
 
@@ -33,4 +35,4 @@ image:6.circleci.jpg[]
 Circleci requires user to manually request a MacOS builder before it can
 be used. This process has been working flawlessly.
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:Overview.adoc[Template overview]

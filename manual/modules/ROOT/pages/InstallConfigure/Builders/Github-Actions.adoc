@@ -1,9 +1,6 @@
 = Github Actions
 
-Github Actions (GA) are used to build flatpak plugins for the new
-runtime 20.08, and also for aarch64. These builds uses Leamas's hardware
-and have restricted access. There are two options: disabling these
-builds or enabling them.
+Github Actions (GA) are used to build flatpak plugins for the new runtime 20.08, and also for aarch64. These builds uses Leamas's hardware and have restricted access. There are two options: disabling these builds or enabling them.
 
 In any case: disable all actions in the Github UI, in _Settings |
 Actions._ GA will otherwise fail in each build, causing the dreaded
@@ -54,3 +51,5 @@ $ git remote update upstream
 $ git pull upstream master
 $ git push origin master:master
 ....
+
+xref:Overview.adoc[Template overview]

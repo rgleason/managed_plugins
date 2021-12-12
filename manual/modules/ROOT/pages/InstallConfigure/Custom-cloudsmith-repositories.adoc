@@ -1,8 +1,7 @@
 = Custom Cloudsmith Repositories
 
 A plugin build usually uploads to cloudsmith repositories. The
-repositories used by default are hardcoded on CMakeLists.txt in snippets
-like
+repositories used by default are hardcoded on CMakeLists.txt in snippets like
 
 ....
 set(OCPN_TEST_REPO
@@ -28,7 +27,8 @@ CLOUDSMITH_UNSTABLE_REPO, CLOUDSMITH_BETA_REPO and
 CLOUDSMITH_STABLE_REPO. The values are a complete repo specification
 like _alec-leamas/opencpn-plugins-unstable_.
 
-How builder environment variables are set is differs for different
-providers like circleci, drone.io or appveyor. See the
-https://github.com/Rasbats/managed_plugins/wiki/Alternative-Workflow[Managed
-Plugins Workflow]
+How builder environment variables are set differs for different
+providers like circleci, drone.io or appveyor. See 
+xref:CloudServiceChanges/IntroCloudServiceChanges.adoc[Cloud service changes]
+
+xref:InstallConfigure.adoc[Installation and configuration]

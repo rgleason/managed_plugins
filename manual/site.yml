@@ -6,7 +6,7 @@ site:
 content:
   sources:
   - url: ../
-    branches: asciidoc
+    branches: manual
     start_path: manual/
 
   - url: https://github.com/opencpn-manuals/development.git

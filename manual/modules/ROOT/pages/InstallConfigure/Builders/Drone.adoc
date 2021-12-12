@@ -24,3 +24,5 @@ image:drone/4.png[4.png]
 And save the settings.
 
 image:drone/5.png[5.png]
+
+xref:Overview.adoc[Template overview]
