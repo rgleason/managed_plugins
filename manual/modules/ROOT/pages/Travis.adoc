@@ -1,7 +1,5 @@
 == Travis
 
-https://travis-ci.org/[Travis Website]
-
 *Sign in with GitHub*
 
 image:0.travis.jpg[0.travis.jpg]

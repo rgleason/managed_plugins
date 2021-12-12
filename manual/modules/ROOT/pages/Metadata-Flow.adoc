@@ -1,11 +1,15 @@
-= The metadata flow
+== The metadata flow
 
-The managed plugin workflow produces, besides the plugin tarballs, also metadata files with info such as name, platform, descriptions and download url. Each build produces a separate metadata file.
+The managed plugin workflow produces, besides the plugin tarballs, also
+metadata files with info such as name, platform, descriptions and
+download url. Each build produces a separate metadata file.
 
-The goal for a plugin is to get this metadata into the opencpn catalog. When present here, the plugin is available in the user GUI.
+The goal for a plugin is to get this metadata into the opencpn catalog.
+When present here, the plugin is available in the user GUI.
 
 The catalog is maintained in the
-https://github.com/opencpn/plugins[plugins project]. The way to make the plugin be part of the catalog is:
+https://github.com/opencpn/plugins[plugins project]. The way to make the
+plugin be part of the catalog is:
 
 * Clone the plugins project
 * The cloned plugins project has a subdirectory metadata/.
@@ -13,6 +17,9 @@ https://github.com/opencpn/plugins[plugins project]. The way to make the plugin 
 * Add and commit the new metadata files.
 * Make a pull request against the plugins project.
 
-The flow is supported by the git-based workflow described in the file README-git.md. The basic idea is that the developer has a clone of the plugins project, and that metadata from the builds is automatically pushed to this clone. See the file README-git.md for details.
+The flow is supported by the git-based workflow described in the file
+README-git.md. The basic idea is that the developer has a clone of the
+plugins project, and that metadata from the builds is automatically
+pushed to this clone. See the file README-git.md for details.
 
-xref:Overview.adoc[Template overview]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

@@ -1,16 +1,20 @@
 == Cloud Service Changes
 
-Changes are made to the plugin files and a backup
-made. The GitHub TideFinder repo can be updated with the file changes.
+Now that the changes have been made to the plugin files and a backup
+made the GitHub TideFinder repo can be updated with the file changes.
 
 == GitHub
 
-The shipdriver workflow simplifies the process of updating the plugin metadata files in 
+The shipdriver workflow simplifies the process of updating the plugin
+metadata files in 
 https://github.com/opencpn/plugins[OpenCPN/plugins].
-At the same time as installers for the TideFinder plugin are made the metadata file is copied to the auto branch of your fork of
+At the same time as installers for the TideFinder plugin are made the
+metadata file is copied to the auto branch of your fork of
 OpenCPN/plugins.
 
-After the build the changes made in your plugins clone/auto branch can be pushed to the plugins clone/master branch ready for a pull request to OpenCPN/plugins.
+After the build the changes made in your plugins clone/auto branch can
+be pushed to the plugins clone/master branch ready for a pull request to
+OpenCPN/plugins.
 
 == CircleCI
 
@@ -54,11 +58,13 @@ set(OCPN_BETA_REPO opencpn/tidefinder-beta  CACHE STRING // Default repository f
 set(OCPN_RELEASE_REPO opencpn/tidefinder-prod CACHE STRING // Default repository for tagged builds not matching beta )
 ----
 
-Make a small non-important change to one of the files and push to the GitHub TideFinder repo.
+Make a small non-important change to one of the files and push to the
+GitHub TideFinder repo.
 
 == Now check the Cloud services for errors
 
-If any build fails the log for the builder is useful for fixing errors in the code and/or scripts.
+If any build fails the log for the builder is useful for fixing errors
+in the code and/or scripts.
 
 *Appveyor*
 
@@ -94,4 +100,4 @@ image:build.errors/3.circleci.error.jpg[3.circleci.error.jpg]
 Again this is due to copying files on Windows. Once set as above the
 build will work.
 
-xref:InstallConfigure.adoc[Installation and configuration]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

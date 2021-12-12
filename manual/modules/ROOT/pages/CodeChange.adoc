@@ -52,4 +52,4 @@ TideFinder_pi::TideFinder_pi(void *ppimgr) :opencpn_plugin_116 (ppimgr)
 *Several source code files are involved in these changes, not just
 TideFinder_pi.cpp.*
 
-xref:Overview.adoc[The Shipdriver Workflow]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

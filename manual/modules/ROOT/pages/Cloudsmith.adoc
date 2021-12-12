@@ -1,9 +1,5 @@
 == Cloudsmith
 
-https://cloudsmith.io/[Cloudsmith Website]
-
-Cloudsmith is the deployment repository which hosts the tarballs and metadata files that form the heart of the managed plugin system.
-
 image:1cloudsmith.jpg[1cloudsmith.jpg]
 
 == Sign Up
@@ -104,4 +100,4 @@ image:10cloudsmith.jpg[10cloudsmith.jpg]
 copy/pasted to a file on your PC for use later.*
 image:11cloudsmith.jpg[11cloudsmith.jpg]
 
-xref:InstallConfigure.adoc[Installation and configuration]
+xref:Alternative-Workflow.adoc[The Shipdriver Workflow]

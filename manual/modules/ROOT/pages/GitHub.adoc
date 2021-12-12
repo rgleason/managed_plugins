@@ -1,6 +1,4 @@
-== Github
-
-https://github.com/[GitHub]
+== Backup
 
 Before making any changes to the master branch of your plugin make
 another branch. This will act as a backup of the state of your plugin
@@ -67,15 +65,11 @@ image:github/9.deploy.key.jpg[9.deploy.key.jpg]
 *Checks* * Have the environment variables been entered for CircleCI,
 Travis and Appveyor?
 
-xref:Builders/CircleCI.adoc[CircleCI]
+xref:CircleCI.adoc[CircleCI]
 
-xref:Builders/Drone.adoc[Drone]
+xref:Travis.adoc[Travis]
 
-Or:
-
-xref:Builders/Travis.adoc[Travis]
-
-xref:Builders/Appveyor.adoc[Appveyor]
+xref:Appveyor.adoc[Appveyor]
 
 * Has a deploy key (with write permissions) been added to your
 OpenCPN/plugins fork repo?
