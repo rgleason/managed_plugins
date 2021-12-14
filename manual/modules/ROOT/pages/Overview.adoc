@@ -1,0 +1,36 @@
+= Overview
+
+== Changes to the plugin
+
+xref:Plugin-Adaptation.adoc[Adapting the legacy plugin]
+
+Go to this section for a description of the additional files needed to enable the plugin to be compiled and hosted by the cloud services. Also the changes to CMakeLists.txt for the plugin and the changes to the source code.
+
+== Installation and configuration
+
+xref:InstallConfigure.adoc[Installation and configuration]
+
+This details how the Cloud services are set up and used. Also the changes to the various Github repositories.
+
+== First build
+
+After setting up the various cloud service the first build can be made. This results in the tarballs being held in the Cloudsmith repository. 
+
+== Integrating with the OpenCPN catalog
+
+* xref:InstallConfigure/Catalog-Github-Integration.adoc[Integrating with the catalog using Github]
+
+* xref:Metadata-Flow.adoc[Introduction to the metadata flow]
+
+== Local builds
+
+* xref:Local-Build.adoc[Building locally]
+* xref:usage.adoc[Usage locally]
+
+A local build of the plug can be carried out using the tools described on these pages.
+
+== Extra techniques that may be useful
+
+xref:Useful-Stuff.adoc[Additional techniques]
+
+xref:index.adoc[<- The ShipDriver template]

@@ -1,0 +1,27 @@
+== Appveyor
+
+https://www.appveyor.com/[Appveyor Website]
+
+*Sign in with your GitHub account.*
+
+image:../../../images/1.appveyor.jpg[]
+
+*New project.*
+
+image:../../../images/2.appveyor.jpg[]
+
+*Add.*
+
+image:../../../images/3.appveyor.jpg[]
+
+*TideFinder will now appear in the list of projects.*
+
+image:../../../images/4.appveyor.jpg[]
+
+== Set the Environment Variables for Appveyor
+
+image:../../../images/appveyor/1.enviro.appveyor.jpg[]
+
+*The save button is easily missed!*
+
+xref:../InstallConfigure/Builders/IntroBuilders.adoc[<- Builders]

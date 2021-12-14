@@ -20,7 +20,7 @@ git commit -m ``made a file executable''
 
 git push
 
-This is needed when copying files from ./ci/ from ShipDriver to another
+This is needed when copying files from ./ci/ in ShipDriver to another
 plugin that is being upgraded. Windows does not retain the file
 permissions for the copied scripts.
 
@@ -47,4 +47,4 @@ mdc.SetTextForeground(m_text_color);
 //mdc.SetTextBackground(wxTRANSPARENT);`  ******* Removed this line to get openGL working in otcurrent_pi
 ....
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:Overview.adoc[<- Shipdriver template overview]

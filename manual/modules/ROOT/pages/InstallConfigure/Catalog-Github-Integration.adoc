@@ -60,6 +60,8 @@ $ git push -f origin auto:auto ④
 ③ Create a new branch on top of master or Beta +
 ④ Unconditionally overwrite the github branch
 
+**These items should already have been carried out:**
+
 . Run _python ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
@@ -126,8 +128,7 @@ plugins in OpenCPN.
 
 Before making the pull request to OpenCPN/plugins make sure your fork of
 this is up to date.
-https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This
-guide] has been found useful. Or on the CLI:
+https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This guide] has been found useful. Or on the CLI:
 
 ....
 $ git remote update upstream
@@ -195,6 +196,6 @@ That said, given the context this should be reasonably safe. At least, a
 separate ssh key is used for this purpose, a key which could be easily
 revoked.
 
-== Bugs
+xref:../Overview.adoc[<- Shipdriver template overview]
 
-Probably plenty.
+

@@ -1,6 +1,10 @@
 == Cloudsmith
 
-image:1cloudsmith.jpg[1cloudsmith.jpg]
+https://cloudsmith.io/[Cloudsmith Website]
+
+Cloudsmith is the deployment repository which hosts the tarballs and metadata files that form the heart of the managed plugin system.
+
+image:../../../images/1cloudsmith.jpg[1cloudsmith.jpg]
 
 == Sign Up
 
@@ -53,36 +57,36 @@ machines.*
 *Once the invite is accepted you will see the OpenCPN organisation
 details.*
 
-image:2cloudsmith.jpg[2cloudsmith.jpg]
+image:../../../images/2cloudsmith.jpg[2cloudsmith.jpg]
 
 *Many repositories have packages already in place.*
 
-image:3cloudsmith.jpg[3cloudsmith.jpg]
+image:../../../images/3cloudsmith.jpg[3cloudsmith.jpg]
 **To create the repositories for TideFinder click the plus sign at the right of the screen.**
 
-image:4cloudsmith.jpg[4cloudsmith.jpg]
+image:../../../images/4cloudsmith.jpg[4cloudsmith.jpg]
 
 *Enter the details for the repository starting with the alpha
 (experimental) repo.*
 
-image:5cloudsmith.jpg[5cloudsmith.jpg]
+image:../../../images/5cloudsmith.jpg[5cloudsmith.jpg]
 
 *Repeat for the beta and prod (production) repositories.*
 
-image:6cloudsmith.jpg[6cloudsmith.jpg]
+image:../../../images/6cloudsmith.jpg[6cloudsmith.jpg]
 
 *Three repos have been created.*
 
-image:7cloudsmith.jpg[7cloudsmith.jpg]
+image:../../../images/7cloudsmith.jpg[7cloudsmith.jpg]
 
 *While we are working with Cloudsmith it is useful to adjust the
 lifecyle setting for the repositories. Use Admin Access to each repo.*
 
-image:8cloudsmith.jpg[8cloudsmith.jpg]
+image:../../../images/8cloudsmith.jpg[8cloudsmith.jpg]
 
 *The only setting needed is Retention Rules.*
 
-image:9cloudsmith.jpg[9cloudsmith.jpg]
+image:../../../images/9cloudsmith.jpg[9cloudsmith.jpg]
 
 *Disable the `Limit By Days' and press the Update button.*
 
@@ -92,12 +96,12 @@ image:9cloudsmith.jpg[9cloudsmith.jpg]
 *Plugin-prod, Limit by days = 0, Limit by count=526, Limit by size = 0*
 *Using a "0" means "disabled"*
 
-image:10cloudsmith.jpg[10cloudsmith.jpg]
+image:../../../images/10cloudsmith.jpg[10cloudsmith.jpg]
 
 *Repeat for the beta and prod (production) repositories.*
 
 *While using Cloudsmith make a note of the API Key. This can be
 copy/pasted to a file on your PC for use later.*
-image:11cloudsmith.jpg[11cloudsmith.jpg]
+image:../../../images/11cloudsmith.jpg[11cloudsmith.jpg]
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:../InstallConfigure.adoc[<- Installation and configuration]

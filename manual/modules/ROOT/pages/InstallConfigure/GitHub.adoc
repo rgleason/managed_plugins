@@ -1,0 +1,93 @@
+== Github
+
+Before making any changes to the master branch of your plugin make
+another branch. This will act as a backup of the state of your plugin
+before moving to the managed workflow.
+
+Two Rasbats Github repos are involved in the managed build:
+
+. TideFinder_pi 
+. plugins
+
+== TideFinder_pi
+
+The changes to the plugin files have been 
+xref:../../Plugin-Adaptation.adoc[shown here.]
+They are pushed to the Rasbats GitHub repository.
+
+== The OpenCpn/plugins fork repository
+
+This Rasbats Github repo is a fork of OpenCPN/plugins:
+https://github.com/OpenCpn/plugins.
+
+The preparation of this repository has been xref:../InstallConfigure/GithubPreps.adoc[shown here.] 
+
+== Building the plugin
+
+*Checks* 
+
+Have the environment variables been entered for CircleCI, Drone,
+Travis and Appveyor?
+
+xref:../InstallConfigure/Builders/CircleCI.adoc[CircleCI]
+
+xref:../InstallConfigure/Builders/Drone.adoc[Drone] or: xref:../InstallConfigure/Builders/Travis.adoc[Travis]
+
+xref:../InstallConfigure/Builders/Appveyor.adoc[Appveyor]
+
+Has a deploy key (with write permissions) been added to your
+OpenCPN/plugins fork repo?
+
+xref:../InstallConfigure/GithubPreps.adoc[Github preparations]
+
+Are the Cloudsmith repos ready to receive your builds?
+
+xref:../InstallConfigure/Cloudsmith.adoc[Cloudsmith]
+
+== *Final preparations for the Github plugins fork repository*
+xref:../InstallConfigure/Catalog-Github-Integration.adoc[Integrating the Catalog with Github]
+
+== Building the plugin
+
+The builds start with pushing a change to the TideFinder repository.
+
+When the changes have been made to the plugin it is a good idea to make
+an untagged build. The builds will arrive in the Cloudsmith
+opencpn/tidefinder-alpha repository. The plugin can be tested for
+functionality by using the *Import plugin…* button in OpenCPN.
+
+The untagged build metadata files are not pushed to the auto branch of
+your GitHub OpenCPN/plugins fork repo.
+
+Now a tagged beta build can be made. The tag name needs to include the
+word `beta'. For example `v1.2.5-beta' This build pushes the plugin
+tarballs and metadata xml files to Cloudsmith opencpn/tidefinder-beta.
+At the same time the metadata files are pushed to the auto branch of
+your GitHub OpenCPN/plugins fork repo.
+
+image:../../../images/cloudsmith/1.tidefinder.beta.repo.jpg[1.tidefinder.beta.repo.jpg]
+
+The beta build can be tested in the same way as the experimental
+untagged version. Use the *Import plugin…* button in OpenCPN.
+
+When you want the plugin to be added to the master catalog another
+tagged build is made. The tag name must not contain `beta'. For example
+`v1.2.5'. The source code for tagged builds, either beta or production
+ends up in GitHub TideFinder repo tag pages. The reason for using
+untagged builds initially is to avoid cluttering up this part of your
+GitHub repo. Unwanted tags can be removed 
+xref:Useful-Stuff.adoc[using this technique]
+
+== pull request from plugins
+
+Before making the pull request to OpenCPN/plugins make sure your fork of
+this is up to date.
+https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This guide] has been found useful.
+
+The builders will make commits in your plugins fork auto branch, one for
+each build. These commits are the metadata files which work with the
+plugin installer of the main OpenCPN program. In beta and production
+mode they become part of the beta and master catalogs of plugins in
+OpenCPN.
+
+xref:../Overview.adoc[<- Shipdriver template overview]

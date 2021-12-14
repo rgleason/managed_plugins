@@ -1,0 +1,23 @@
+== Builders
+
+The following free opensource accounts/services are available:
+
+* xref:../InstallConfigure/Builders/Appveyor.adoc[Appveyor]
+
+A virtual machine for making Windows OS plugin builds
+
+* xref:../InstallConfigure/Builders/CircleCI.adoc[CircleCI]
+
+CircleCI hosts virtual machines which produce installers for a number of OS
+
+* xref:../InstallConfigure/Builders/Github-Actions.adoc[Github Actions]
+
+* xref:../InstallConfigure/Builders/Drone.adoc[Drone]
+
+Hosts a virtual machine for the creation of installers for the Raspbian ARMHF system. An alternative to Travis.
+
+* xref:../InstallConfigure/Builders/Travis.adoc[Travis]
+
+A similar maching to Drone for the creation of installers for the Raspbian ARMHF system.
+
+xref:../../InstallConfigure.adoc[<- Installation and configuration]

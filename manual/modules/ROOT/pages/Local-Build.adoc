@@ -100,7 +100,7 @@ supports local build and deployment. The basic pieces are:
 * _ci/git_push_ which pushes updated metadata in a build directory to a
   clone of the plugins directory, supporting making a PR to said project
   as described in the
-  xref:Catalog-Github-Integration.adoc[github integration page]
+  xref:../InstallConfigure/Catalog-Github-Integration.adoc[github integration page]
 
 === The configuration file
 

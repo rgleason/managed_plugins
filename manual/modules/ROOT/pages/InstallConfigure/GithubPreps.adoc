@@ -1,0 +1,27 @@
+= Github OpenCPN/plugins fork
+
+The builders need the information generated here.
+
+As well as creating tarball and metadata files in Cloudsmith a link with link:https://github.com/OpenCPN/plugins[OpenCPN/plugins] is needed. Make a fork of this repository in your own Github repositories.
+
+To permit the builders to push to this repository environment variables are needed for the services. A public key authorises the connection with Github.
+
+== Providing the link to your OpenCPN/plugins fork
+
+Run the script _ci/new-credentials_ in the TideFinder repo. The script
+will ask for the ssh url to your plugins fork repo and a secret
+password.
+image:../../../images/github/1.plugins.jpg[1.plugins.jpg]
+
+* Dont forget the password…
+* The script will create an encrypted private + a public key in the _build-deps_
+directory. Commit and push these to Github TideFinder.
+* Register the new public key (displayed by new-credentials) as a
+deployment key with write permissions (Allow write access) on your
+github OpenCPN plugins fork repo (in Settings | Deploy keys)
+
+image:../../../images/github/10.deploy.key.jpg[10.deploy.key.jpg]
+
+image:../../../images/github/9.deploy.key.jpg[9.deploy.key.jpg]
+
+xref:../InstallConfigure.adoc[<- Installation and configuration]

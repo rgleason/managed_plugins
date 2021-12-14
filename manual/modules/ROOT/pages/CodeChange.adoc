@@ -1,7 +1,3 @@
-== Extra techniques that may be useful
-
-xref:Useful-Stuff[Additional techniques]
-
 == Source Code Changes
 
 == Changes associated with API 16
@@ -52,4 +48,4 @@ TideFinder_pi::TideFinder_pi(void *ppimgr) :opencpn_plugin_116 (ppimgr)
 *Several source code files are involved in these changes, not just
 TideFinder_pi.cpp.*
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:Overview.adoc[<- Shipdriver template overview]
