@@ -11,7 +11,7 @@ To permit the builders to push to this repository environment variables are need
 Run the script _ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password.
-image:../../../images/github/1.plugins.jpg[1.plugins.jpg]
+image:github/1.plugins.jpg[1.plugins.jpg]
 
 * Dont forget the password…
 * The script will create an encrypted private + a public key in the _build-deps_
@@ -20,8 +20,8 @@ directory. Commit and push these to Github TideFinder.
 deployment key with write permissions (Allow write access) on your
 github OpenCPN plugins fork repo (in Settings | Deploy keys)
 
-image:../../../images/github/10.deploy.key.jpg[10.deploy.key.jpg]
+image:github/10.deploy.key.jpg[10.deploy.key.jpg]
 
-image:../../../images/github/9.deploy.key.jpg[9.deploy.key.jpg]
+image:github/9.deploy.key.jpg[9.deploy.key.jpg]
 
 xref:../InstallConfigure.adoc[<- Installation and configuration]

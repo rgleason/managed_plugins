@@ -4,23 +4,23 @@ https://travis-ci.org/[Travis Website]
 
 *Sign in with GitHub*
 
-image:../../../images/0.travis.jpg[0.travis.jpg]
+image:0.travis.jpg[0.travis.jpg]
 
 *The Dashboard has a list of your GitHub repos. Switch on TideFinder_pi*
 
-image:../../../images/1.travis.jpg[1.travis.jpg]
+image:1.travis.jpg[1.travis.jpg]
 
 *Use the plus to add the TideFinder GitHub repo.*
 
-image:../../../images/2.travis.jpg[2.travis.jpg]
+image:2.travis.jpg[2.travis.jpg]
 
 Use Settings to add the Environment Variables:
 
-image:../../../images/travis/2.add.environment.variables.jpg[]
+image:travis/2.add.environment.variables.jpg[]
 
 *We will trigger the build later after updating GitHub with the new
 files.*
 
-image:../../../images/3.travis.jpg[3.travis.jpg]
+image:3.travis.jpg[3.travis.jpg]
 
 xref:../InstallConfigure/Builders/IntroBuilders.adoc[<- Builders]

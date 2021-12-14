@@ -5,24 +5,24 @@
 *After logging in Drone has a list of your GitHub repos. Activate
 TideFinder_pi*
 
-image:../../../../images/drone/1.png[1.png]
+image:drone/1.png[1.png]
 
 Activate the repository.
 
-image:../../../../images/drone/2.png[2.png]
+image:drone/2.png[2.png]
 
 The settings page appears. The only area which needs editing is
 'Secrets'. These are called 'Environment Variables' in Appveyor and
 CircleCI.
 
-image:../../../../images/drone/3.png[3.png]
+image:drone/3.png[3.png]
 
 Add the Secrets. It is easiest to copy these from Appveyor.
 
-image:../../../../images/drone/4.png[4.png]
+image:drone/4.png[4.png]
 
 And save the settings.
 
-image:../../../../images/drone/5.png[5.png]
+image:drone/5.png[5.png]
 
-xref:../InstallConfigure/Builders/IntroBuilders.adoc[<- Builders]
+xref:InstallConfigure/Builders/IntroBuilders.adoc[<- Builders]

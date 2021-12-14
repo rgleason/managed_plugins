@@ -65,7 +65,7 @@ tarballs and metadata xml files to Cloudsmith opencpn/tidefinder-beta.
 At the same time the metadata files are pushed to the auto branch of
 your GitHub OpenCPN/plugins fork repo.
 
-image:../../../images/cloudsmith/1.tidefinder.beta.repo.jpg[1.tidefinder.beta.repo.jpg]
+image:cloudsmith/1.tidefinder.beta.repo.jpg[1.tidefinder.beta.repo.jpg]
 
 The beta build can be tested in the same way as the experimental
 untagged version. Use the *Import plugin…* button in OpenCPN.

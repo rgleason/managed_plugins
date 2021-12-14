@@ -42,13 +42,13 @@ should read:
 add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})
 
 
-image:../../../images/build.errors/1.appveyor.error.jpg[1.appveyor.error.jpg]
+image:build.errors/1.appveyor.error.jpg[1.appveyor.error.jpg]
 
 *Travis* 
 
 The scripts copied from ShipDriver do not have execute permission. As a result permission to run is denied.
 
-image:../../../images/build.errors/2.travis.error.jpg[2.travis.error.jpg]
+image:build.errors/2.travis.error.jpg[2.travis.error.jpg]
 
 This results from copying script files from ShipDriver to TideFinder on
 Windows. Permissions are not copied. To set these again the Git command
@@ -63,7 +63,7 @@ can be used for the scripts in ci/.
 The scripts copied from ShipDriver do not have execute
 permission. As a result permission to run is denied.
 
-image:../../../images/build.errors/3.circleci.error.jpg[3.circleci.error.jpg]
+image:build.errors/3.circleci.error.jpg[3.circleci.error.jpg]
 
 Again this is due to copying files on Windows. Once set as above the
 build will work.
