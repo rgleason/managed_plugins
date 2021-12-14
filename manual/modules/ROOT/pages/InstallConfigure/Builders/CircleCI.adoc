@@ -5,19 +5,19 @@ https://circleci.com/[CircleCI Website]
 Sign up with GitHub at this page:
 http://circleci.com/signup/[http://circleci.com/signup/]
 
-image::../../../images/1.circleci.jpg[]
+image::1.circleci.jpg[]
 
 *Find your way to the Dashboard*
 
-image:../../../images/2.circleci.jpg[]
+image:2.circleci.jpg[]
 
 *You need to follow a project. GitHub has a list of your GitHub repos.*
 
-image:../../../images/3.circleci.jpg[]
+image:3.circleci.jpg[]
 
 *Config.yml has already been written. Use existing.*
 
-image:../../../images/4.circleci.jpg[]
+image:4.circleci.jpg[]
 
 == Environment variables
 
@@ -25,31 +25,31 @@ Go to the project settings for TideFinder
 
 Select Environment Variables
 
-image:../../../images/1.cc.environment.jpg[1.cc.environment.jpg]
+image:1.cc.environment.jpg[1.cc.environment.jpg]
 
 Add the Environment Variable for Cloudsmith - this is the
 CLOUDSMITH_API_KEY that was saved previously
 
-image:../../../images/2.cc.environment.jpg[2.cc.environment.jpg]
+image:2.cc.environment.jpg[2.cc.environment.jpg]
 
 Use the plugins clone SSH url and the password you used for making the
 keys to create further Environment Variables in the CircleCI TideFinder
 project.
 
-image:../../../images/github/2.plugins.jpg[2.plugins.jpg]
+image:github/2.plugins.jpg[2.plugins.jpg]
 
 The Environment Variables should be similar to this.
 
-image:../../../images/github/3.plugins.jpg[3.plugins.jpg]
+image:github/3.plugins.jpg[3.plugins.jpg]
 
 == Start building
 
-image:../../../images/5.circleci.jpg[]
+image:5.circleci.jpg[]
 
 *The build fails at the moment because GitHub was not updated with the
 changed TideFinder files.*
 
-image:../../../images/6.circleci.jpg[]
+image:6.circleci.jpg[]
 
 Circleci requires user to manually request a MacOS builder before it can
 be used. This process has been working flawlessly.
