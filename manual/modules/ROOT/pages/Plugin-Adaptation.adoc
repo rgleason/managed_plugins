@@ -75,16 +75,16 @@ Change the building instructions and make other edits as necessary.
 
 == CMakeLists.txt
 
-The legacy CMakeLists.txt has been replaced by a generic file, which is the one copied from ShipDriver and a further cmake file: Plugin.cmake. This file contains a list of the source code files and other data specific to the plugin.
+The legacy _CMakeLists.txt_ has been replaced by a generic file, which is the one copied from ShipDriver and a further cmake file: _Plugin.cmake_. This file contains a list of the source code files and other data specific to the plugin.
 
-Open the legacy CMakeLists.txt backup file for reference.
-Copy the ShipDriver Plugin.cmake file to the main directory of your plugin. Edit the Plugin.cmake file substituting TideFinder for ShipDriver. 
+Open the legacy _CMakeLists.txt_ backup file for reference.
+Copy the ShipDriver _Plugin.cmake_ file to the main directory of your plugin. Edit the _Plugin.cmake_ file substituting TideFinder for ShipDriver. 
 
-Remove `src/ocpn_plugin.h' from the source files listed in Plugin.cmake. This is now found in the libs/api-16 directory.
+Remove _src/ocpn_plugin.h_ from the source files listed in _Plugin.cmake_. This is now found in the libs/api-16 directory. The file can also be removed from the source directory.
 
 == org.opencpn.OpenCPN.Plugin.TideFinder.yaml
 
-This file is found in the `flatpak' directory. Just 3 name
+This file is found in the _flatpak_ directory. Just 3 name
 substitutions, tidefinder replacing shipdriver.
 
 xref:Overview.adoc[The Shipdriver Workflow]
