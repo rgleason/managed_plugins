@@ -1,4 +1,4 @@
-== Cloudsmith
+= Cloudsmith
 
 https://cloudsmith.io/[Cloudsmith Website]
 

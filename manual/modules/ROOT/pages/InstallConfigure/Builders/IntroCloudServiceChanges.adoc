@@ -1,4 +1,4 @@
-== Cloud Service Changes
+= Cloud Service Changes
 
 Now that the changes have been made to the plugin files and a backup
 made the GitHub TideFinder repo can be updated with the file changes.

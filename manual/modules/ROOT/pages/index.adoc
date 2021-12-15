@@ -66,6 +66,8 @@ assisted by testing the workflow. He has produced this guide to assist developer
 
 xref:Overview.adoc[Overview]
 
+xref:Plugin-Adaptation.adoc[Adapting the plugin]
+
 xref:InstallConfigure.adoc[Installation and configuration]
 
 xref:Metadata-Flow.adoc[Metadata flow]

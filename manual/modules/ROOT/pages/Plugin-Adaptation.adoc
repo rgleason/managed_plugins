@@ -1,28 +1,22 @@
-== Adapting the legacy plugin
-
-xref:CodeChange.adoc[Extra detail on the source code changes]
+= Adapting the legacy plugin
 
 == Source Code Changes
 
-Make the following changes to the plugin source code.
-
-* *Use API 16:* Update the source code to use API 16.
-* *Change the method for finding the data directory:* Use
-GetPluginDataDir instead of GetpDataDir Examples of code changes are
-[[shown here|codechange]].
-* These changes should be enough for most plugins. However, more exotic plugins might need to consider the more complete list at
-https://github.com/leamas/OpenCPN/wiki/Plugin-adaptation
+Changes have been made to allow CI (Continuous Integration) as shown in Plugin Installer Code Adaptation.
 
 == Replace/add files to enable CI (Continuous Integration)
 
 Use the 
 https://github.com/Rasbats/shipdriver_pi[ShipDriver
 files/directories] 
-to make the changes required.
+as the source.
 
-* Update-templates
-(Make a backup of CMakeLists.txt)
-A script has been written to simplify the process of adding the directories/files needed for the workflow.
+*Update-templates Script*
+
+(Make a backup of _CMakeLists.txt_ for later use. It is overwritten by the script
+)
+
+This script has been written to simplify the process of adding the directories/files needed for the workflow.
 
 You will need git bash for running the script. A guide is included in the ShipDriver repo: xref:UPDATE_TEMPLATES.adoc[UPDATE_TEMPLATES.md].
 

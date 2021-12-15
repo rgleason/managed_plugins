@@ -1,4 +1,4 @@
-== Useful Hints found during compilation
+= Useful Hints found during compilation
 
 *1. Removing obsolete links from a github repository:*
 

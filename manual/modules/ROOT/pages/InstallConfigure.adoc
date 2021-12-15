@@ -1,4 +1,4 @@
-== Installation and configuration
+= Installation and configuration
 
 This section describes how the various services are configured. The plugin is built and the tarball and metadata arrive in the Cloudsmith repository. Finally a Pull Request is made from Github, which results in the plugin being available from the OpenCPN catalog. 
 

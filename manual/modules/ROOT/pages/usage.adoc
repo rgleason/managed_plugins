@@ -1,4 +1,4 @@
-# INSTALL: Building Plugins generic README.
+= INSTALL: Building Plugins generic README.
 
 Install build dependencies as described in the manual.
 Then clone this repository, enter it and make

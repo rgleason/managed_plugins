@@ -1,4 +1,4 @@
-== Appveyor
+= Appveyor
 
 https://www.appveyor.com/[Appveyor Website]
 

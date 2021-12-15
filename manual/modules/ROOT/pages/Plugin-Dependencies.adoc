@@ -1,4 +1,4 @@
-== Plugin dependencies
+= Plugin dependencies
 
 Plugins must not depend on external packages like Linux .deb or MacOS homebrew packages to work (since end users don't have them installed). This means that a plugin which depends on an external library not available by just installing OpenCPN must handle this in various other ways like:
 

@@ -1,4 +1,4 @@
-== Github
+= Github
 
 Before making any changes to the master branch of your plugin make
 another branch. This will act as a backup of the state of your plugin

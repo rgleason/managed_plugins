@@ -1,7 +1,7 @@
-== Cloud Service Changes
+= Cloud Service Changes
 
 Changes are made to the plugin files and a backup
-made. The GitHub TideFinder repo can be updated with the file changes.
+made. The GitHub TideFinder repo is then updated with the file changes.
 
 == GitHub
 
@@ -33,13 +33,13 @@ If any build fails the log for the builder is useful for fixing errors in the co
 
 *Appveyor*
 
-The appveyor log shows that there is an error in Plugin.cmake.
+The appveyor log shows that there is an error in _Plugin.cmake_.
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})
+'add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC})'
 
 should read:
 
-add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})
+'add_library(${CMAKE_PROJECT_NAME} SHARED ${SRC_TIDEFINDER})'
 
 
 image:build.errors/1.appveyor.error.jpg[1.appveyor.error.jpg]

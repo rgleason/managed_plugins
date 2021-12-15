@@ -1,4 +1,4 @@
-== Travis
+= Travis
 
 https://travis-ci.org/[Travis Website]
 
