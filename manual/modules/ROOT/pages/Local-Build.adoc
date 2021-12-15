@@ -5,6 +5,10 @@
 Before making a local build, build dependencies needs to be installed.
 This document tries to describe the procedures.
 
+When the dependencies are installed the build is done as described in
+INSTALL.md which distributed in every plugin. A (possibly outdated)
+copy is available in the xref:usage.adoc[Usage page].
+
 === Windows
 
 Before build, run the `buildwin\win_deps.bat` file. The file requires a
@@ -39,16 +43,16 @@ Proceed by installing _flatpak-builder_. Most distributions
 including Ubuntu and Fedora have this packaged, making it possible
 to install using tools like _apt(8)_ or _dnf(8)_.
 
-Then install the build dependencies using something like 
+Then install the build dependencies using something like
 
     $ flatpak remote-add --user --if-not-exists \
           flathub https://flathub.org/repo/flathub.flatpakrepo
     $ flatpak install --user flathub org.freedesktop.Platform//20.08
     $ flatpak install --user flathub org.freedesktop.Sdk//20.08
     $ flatpak install --user flathub org.opencpn.OpenCPN
-    
+
 20.08 is the runtime version which indeed is 20.08 at the time of
-writing. Review the _flatpak/org.opencpn.*yaml_ file to check this, 
+writing. Review the _flatpak/org.opencpn.*yaml_ file to check this,
 look for `runtime-version`.
 
 === Android

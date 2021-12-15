@@ -1,5 +1,10 @@
 = INSTALL: Building Plugins generic README.
 
+NOTE: This is a copy of the file INSTALL.md, distributed with all
+plugins. INSTALL.md is the preferred version.
+
+---
+
 Install build dependencies as described in the manual.
 Then clone this repository, enter it and make
 `rm -rf build; mkdir build; cd build`.
