@@ -2,7 +2,9 @@
 
 == Source Code Changes
 
-Changes have been made to allow CI (Continuous Integration) as shown in Plugin Installer Code Adaptation.
+A plugin using the shipriver templates must as a first step be adapted
+to the Plugin Installer as described in the
+xref:ocpn-dev-manual::Plugin-Pi-Adaptation.adoc[Developer Manual Page].
 
 == Replace/add files to enable CI (Continuous Integration)
 
