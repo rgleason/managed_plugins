@@ -5,8 +5,12 @@ site:
 
 content:
   sources:
-  - url: .
+  - url: ../
+    start_path: manual/
     branches: HEAD
+
+  - url: https://github.com/opencpn-manuals/development.git
+    branches: main
 
 
 ui:
