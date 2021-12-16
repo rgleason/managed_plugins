@@ -1,0 +1,75 @@
+= Builder environment variables
+
+All builders like CircleCI, Appveyor, Travis, etc. needs some
+environment variables. The procedures for setting them varies
+between the builders, see
+xref:InstallConfigure/Builders/IntroCloudServiceChanges.adoc[Cloud service changes]
+However, the contents of each variable is the same on all builders.
+This page is a reference for these variables
+
+Most users need to define 
+
+* CLOUDSMITH_API_KEY
+* GIT_REPO
+* GIT_KEY_PASSWORD
+
+== CLOUDSMITH_API_KEY
+
+This is a secret available in the Cloudsmith web UI in the account
+drop down top-right under the API Settings menu:
+
+image::11cloudsmith.jpg[]
+
+== GIT_REPO
+
+This a public configuration item related to the metadata 
+push function described in the
+xref:InstallConfigure/Catalog-Github-Integration.adoc[metadata push] page.
+
+Metadata push requires user to have forked the github repository at
+https://github.com/opencpn/plugins. GIT_REPO should be set to the 
+SSH-based url to this fork, something like _git@github.com:leamas/plugins.git_
+
+The value can be obtained on the command line in the fork using 
+
+    git config --get remote.origin.url
+
+or using the GUI:
+
+image::github/1.plugins.jpg[]
+
+
+== GIT_KEY_PASSWORD
+
+A secret also related  to the metadata push function described in the
+xref:InstallConfigure/Catalog-Github-Integration.adoc[metadata push] page. This page
+describes how to run the script _new-credentials_. GIT_KEY_PASSWORD
+should be the password entered to this script.
+
+== Custom Cloudsmith Repositories
+
+A plugin build usually uploads to cloudsmith repositories. The
+repositories used depends on the git tag attached to the build, if any. 
+The repositories used by default are hardcoded in Plugin.cmake in snippets
+like
+
+....
+set(OCPN_TEST_REPO "opencpn/shipdriver-alpha"
+    CACHE STRING "Default repository for untagged builds"
+)
+set(OCPN_BETA_REPO "opencpn/shipdriver-beta"
+    CACHE STRING "Default repository for tagged builds matching 'beta'"
+)
+set(OCPN_RELEASE_REPO "opencpn/shipdriver-prod"
+    CACHE STRING "Default repository for tagged builds not matching 'beta'"
+)
+....
+
+When forking a plugin, the developer hasn't permissions to upload to
+these hardcoded repositories which belongs to the original owner. To fix
+this, other repos could be defined using the environment variables
+CLOUDSMITH_UNSTABLE_REPO, CLOUDSMITH_BETA_REPO and
+CLOUDSMITH_STABLE_REPO. The values are complete repo specifications
+like _alec-leamas/opencpn-plugins-unstable_.
+
+xref:Overview.adoc[<- ShipDriver template overview]

@@ -24,8 +24,8 @@ After setting up the various cloud service the first build can be made. This res
 
 == Local builds
 
-* xref:Local-Build.adoc[Building locally]
-* xref:usage.adoc[Usage locally]
+* xref:Local-Build.adoc[Installing build dependencies]
+* xref:usage.adoc[Running local builds]
 
 A local build of the plug can be carried out using the tools described on these pages.
 
