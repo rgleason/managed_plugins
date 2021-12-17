@@ -1,86 +1,100 @@
 = Adapting the legacy plugin
+:sectnums:
 
-== Source Code Changes
+== Introduction
 
-A plugin using the shipriver templates must as a first step be adapted
-to the Plugin Installer as described in the
+In order to enable Continous Integration (CI) a number of template files
+and directories needs to be installed in the plugin sources. This page
+describes this process.
+
+Before using the shipdriver templates a plugin must as a first step
+be adapted to the Plugin Installer as described in the
 xref:ocpn-dev-manual::Plugin-Pi-Adaptation.adoc[Developer Manual Page].
 
-== Replace/add files to enable CI (Continuous Integration)
+== Install template files
 
-Use the 
-https://github.com/Rasbats/shipdriver_pi[ShipDriver
-files/directories] 
-as the source.
+=== update-templates
 
-*Update-templates Script*
+The script _update-templates_  script has been written to simplify the
+process of adding the directories/files needed for the workflow.  You will
+need git bash for running the script. A guide is included in
+xref:UPDATE_TEMPLATES.adoc[UPDATE_TEMPLATES.md].
 
-(Make a backup of _CMakeLists.txt_ for later use. It is overwritten by the script
-)
+The script will install all files required in TideFinder except
+as noted below.
 
-This script has been written to simplify the process of adding the directories/files needed for the workflow.
+=== README.md and COPYING
 
-You will need git bash for running the script. A guide is included in the ShipDriver repo: xref:UPDATE_TEMPLATES.adoc[UPDATE_TEMPLATES.md].
+All plugins should have README.md which gives a short summary of the
+plugin, links to documentation and, important, an overall copyright
+and license statement.  This is a legal requirement to be able to
+distribute the plugin
 
-image:1files.jpg[1files.jpg]
+Files in the templates have different licenses, all compatible with
+GPL version 3 or later (GPLv3+). If you choose to use this license,
+there should also be a file COPYING containing the license.
+This could be retrieved using `git checkout shipdriver/master COPYING`
 
-== Using the script the following directories are copied from ShipDriver to the TideFinder directory:
 
-* .circleci
-* build-deps
-* buildwin
-* ci
-* cmake
-* flatpak (*rename org.opencpn.OpenCPN.Plugin.ShipDriver.yaml as
-org.opencpn.OpenCPN.Plugin.TideFinder.yaml*)
-* libs
-* scripts
+=== CMakeLists.txt
 
-== This directory replaces the original in TideFinder:
+The templates have divided the usual, single CMakeLists.txt into two files
+_Plugin.cmake_ and _CMakeLists.txt_. _Plugin.cmake_ contains everything which
+is specific for the plugin. _CMakeLists.txt_ is part of the templates and
+the same in all plugins.
 
-* cmake
+After running the script, _Plugin.cmake_ is still missing. It can be added
+using `git checkout shipdriver/master  Plugin.cmake`
 
-== These ShipDriver files are added to the TideFinder/ directory:
+This file needs to be modified, most of the required items will be available
+in CMakeLists.txt. After having modified _Plugin.cmake_ to match TideFinder
+checkout the generic, template CMakeLists.txt using
+`git checkout shipdriver/master CMakeLists.txt`.
 
-* .clang-format
-* .cmake-format.yaml
-* .drone.yml
-* .gitattributes
-* .gitignore
-* .travis.yml
-* appveyor.yml
-* CMakeLists (Make a backup because the original will be overwritten)
-* COPYING
-* INSTALL.md
-* plugin.xml.in
-* UPDATE_TEMPLATES.md
-* update-templates
+This will overwrite the existing _CMakeLists.txt_, but after all it is in the
+git history. Commit the two files.
 
-=== Files to edit
+=== The flatpak directory
 
-* README.md
-* CMakeLists.txt
-* flatpak/org.opencpn.OpenCPN.Plugin.TideFinder.yaml
+Start by checking out the shipdriver flatpak directory using:
+`git checkout shipdriver/master flatpak`
 
-It may be easiest to use two text editor windows, one showing the
-TideFinder file with the other showing the ShipDriver file.
+The directory will contain a file named
+_org.opencpn.OpenCPN.Plugin.shipdriver.yaml_.
+This should be renamed to match the TideFinder plugin i. e.,
+_org.opencpn.OpenCPN.Plugin.TideFinder.yaml_.
 
-== README.md
+After renaming it, edit file and replace ShipDriver with TideFinder in all places.
+This is enough for simple plugins.
 
-Change the building instructions and make other edits as necessary.
+=== Remove obsolete files
 
-== CMakeLists.txt
+Remove _src/ocpn_plugin.h_ from the source files listed in _Plugin.cmake_. This is now
+found in the libs/api-16 directory. The file should also be removed from the src directory.
 
-The legacy _CMakeLists.txt_ has been replaced by a generic file, which is the one copied from ShipDriver and a further cmake file: _Plugin.cmake_. This file contains a list of the source code files and other data specific to the plugin.
+== Appendix: Affected Files
 
-Open the legacy _CMakeLists.txt_ backup file for reference.
-Copy the ShipDriver _Plugin.cmake_ file to the main directory of your plugin. Edit the _Plugin.cmake_ file substituting TideFinder for ShipDriver. 
+=== Directories replaced by template files:
 
-Remove _src/ocpn_plugin.h_ from the source files listed in _Plugin.cmake_. This is now found in the libs/api-16 directory. The file can also be removed from the source directory.
+[cols="2",width="70%"]
+|===
+| .circleci | build-deps
+| buildwin  | ci
+| cmake     | libs
+| scripts   | cmake
+|===
 
-== org.opencpn.OpenCPN.Plugin.TideFinder.yaml
 
-This file is found in the _flatpak_ directory. Just 3 name
-substitutions, tidefinder replacing shipdriver.
+=== Files added/replaced:
+
+[cols="2",width="70%"]
+|===
+| .clang-format       | .cmake-format.yaml
+| .drone.yml          | .gitattributes
+| .gitignore          | .travis.yml
+| appveyor.yml        | CMakeLists
+| INSTALL.md          | plugin.xml.in
+| UPDATE_TEMPLATES.md | update-templates
+|===
 
 xref:Overview.adoc[The Shipdriver Workflow]
