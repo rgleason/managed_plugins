@@ -67,7 +67,7 @@ can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
 +
-Or, in the OpenCPN/plugins fork, on the command line using 
+Or, in the OpenCPN/plugins fork, on the command line using +
 `git config --get remote.origin.url`
 
 . Dont forget the password...
