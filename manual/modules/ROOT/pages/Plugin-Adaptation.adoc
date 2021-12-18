@@ -67,6 +67,10 @@ _org.opencpn.OpenCPN.Plugin.TideFinder.yaml_.
 After renaming it, edit file and replace ShipDriver with TideFinder in all places.
 This is enough for simple plugins.
 
+If _org.opencpn.OpenCPN.Plugin.TideFinder.yaml_ already exists and flatpak builds fail
+compare the file with _org.opencpn.OpenCPN.Plugin.shipdriver.yaml_ in the ShipDriver repo.
+A small edit for the flatpak SDK version may be needed.
+
 === Remove obsolete files
 
 Remove _src/ocpn_plugin.h_ from the source files listed in _Plugin.cmake_. This is now
