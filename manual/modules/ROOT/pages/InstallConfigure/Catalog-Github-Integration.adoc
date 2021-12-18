@@ -60,8 +60,6 @@ $ git push -f origin auto:auto ④
 ③ Create a new branch on top of master or Beta +
 ④ Unconditionally overwrite the github branch
 
-**These items should already have been carried out:**
-
 . Run _python ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
@@ -69,7 +67,7 @@ can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
 +
-Or, in the OpenCPN/plugins fork, on the command line using 
+Or, in the OpenCPN/plugins fork, on the command line using +
 `git config --get remote.origin.url`
 
 . Dont forget the password...
