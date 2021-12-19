@@ -10,8 +10,6 @@ This section describes how the various services are configured. The plugin is bu
 
 * xref:InstallConfigure/Cloud-Service-Changes.adoc[Cloud service changes]
 
-* xref:InstallConfigure/Custom-cloudsmith-repositories.adoc[Custom cloudsmith repositories]
-
 * xref:InstallConfigure/GitHub.adoc[Github]
 
 xref:Overview.adoc[<- ShipDriver template overview]
