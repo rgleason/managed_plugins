@@ -29,10 +29,10 @@ scripts used here does not work out of the box. In git-bash, use the command
 `alias python='winpty python.exe'` as a temporary work around before taking
 more actions. See the https://stackoverflow.com/questions/32597209/[Stack overflow
 question] for more info
-* In the OpenCPN/plugins fork, make sure there is a remote named _upstream_. 
+* In the OpenCPN/plugins fork, make sure there is a remote named _upstream_.
 A oneliner fixes this:
 
-    
+
     $ git ls-remote --exit-code upstream &>/dev/null || \
         git remote add upstream https://github.com/OpenCPN/plugins.git
 
@@ -59,8 +59,11 @@ $ git push -f origin auto:auto ④
 ② Make sure our data about the github catalog is updated. +
 ③ Create a new branch on top of master or Beta +
 ④ Unconditionally overwrite the github branch
-
-. Run _python ci/new-credentials_ in the TideFinder repo. The script
++
+. _Steps 3-6 are also part of the xref::InstallConfigure/GithubPreps.adoc[
+Initial setup  workflow] and may thus already be completed_. +
+[[new-credentials]]
+Run _python ci/new-credentials_ in the TideFinder repo. The script
 will ask for the ssh url to your plugins fork repo and a secret
 password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
 can be found in the Github UI:
