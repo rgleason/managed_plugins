@@ -83,6 +83,10 @@ Examples:
     update-templates sd3.0.0            -- get updates from sd3.0.0 tag
     update-templates -l                 -- list all available tags
 
+NOTE: The default alternative is (should be) to update to the latest
+available tag. The default option using shipdriver/master is 
+basically for template development.
+
 == Checking modifications in CMakeLists.txt and flatpak manifest
 
 As part of the 3.0.0 transition CMakeLists.txt is split into one
