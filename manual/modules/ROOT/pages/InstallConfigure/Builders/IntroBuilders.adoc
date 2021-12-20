@@ -10,8 +10,6 @@ A virtual machine for making Windows OS plugin builds
 
 CircleCI hosts virtual machines which produce installers for a number of OS
 
-* xref:../InstallConfigure/Builders/Github-Actions.adoc[Github Actions]
-
 * xref:../InstallConfigure/Builders/Drone.adoc[Drone]
 
 Hosts a virtual machine for the creation of installers for the Raspbian ARMHF system. An alternative to Travis.
