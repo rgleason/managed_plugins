@@ -13,7 +13,8 @@ After the build the changes made in your plugins clone/auto branch can be pushed
 == Experimenting with a new build
 
 So far none of the pushes to the GitHub TideFinder repo have been
-tagged. We will continue like this as we test the build.
+tagged. We will continue like this as we test the build. 
+The options below are found in the Plugin.cmake file.
 
 ----
 # ——– Options ———-
