@@ -22,7 +22,7 @@ xref:UPDATE_TEMPLATES.adoc[UPDATE_TEMPLATES.md].
 
 The script will install all files required in TideFinder except
 as noted below. Note that script is normally used to update to
-a tag like sd3.0.0
+from a tag like sd3.0.0
 
 === README.md and COPYING
 
@@ -51,7 +51,8 @@ updating to sd3.0.0
 This file needs to be modified, most of the required items will be available
 in CMakeLists.txt. After having modified _Plugin.cmake_ to match TideFinder
 checkout the generic, template CMakeLists.txt using
-`git checkout shipdriver/master CMakeLists.txt`.
+`git checkout sd3.0.0 CMakeLists.txt`, assuming update-templates used the
+sd3.0.0 tag.
 
 This will overwrite the existing _CMakeLists.txt_, but after all it is in the
 git history. Commit the two files.
