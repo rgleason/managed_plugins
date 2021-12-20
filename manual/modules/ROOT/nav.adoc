@@ -8,7 +8,6 @@
 ** xref:InstallConfigure/Builders/IntroBuilders.adoc[Builders]
 *** xref:InstallConfigure/Builders/Appveyor.adoc[Appveyor]
 *** xref:InstallConfigure/Builders/CircleCI.adoc[CircleCI]
-*** xref:InstallConfigure/Builders/Github-Actions.adoc[Github Actions]
 *** xref:InstallConfigure/Builders/Drone.adoc[Drone.io]
 *** xref:InstallConfigure/Builders/Travis.adoc[Travis]
 ** xref:InstallConfigure/BuilderEnv.adoc[Builder environment]

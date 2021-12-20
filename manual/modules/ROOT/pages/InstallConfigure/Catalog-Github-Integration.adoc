@@ -152,7 +152,6 @@ $ git rebase master
 $ git checkout master
 $ git merge --squash auto
 $ git commit
-$ git push
 ....
 
 The rebase operation should not be strictly necessary, but will pick up
@@ -174,12 +173,28 @@ $ git rebase Beta
 $ git checkout Beta
 $ git merge --squash auto
 $ git commit
-$ git push
 ....
 
 The new TideFinder metadata files have been added to your
 OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
 the Beta catalog of OpenCPN/plugins.
+
+=== Cleaning up old metadata
+
+Normally, only the last version of the plugin should be available in the
+catalog. The command
+
+....
+    $ ls -lt metadata/my-plugin*
+....
+
+lists all metadata files for given plugin in date order. Use `git rm` to
+remove all older files. When completed, commit and  push:
+
+....
+    $ git commit -m "Removing obsoleted metadata."
+    $ git push
+....
 
 == Troubleshooting
 
