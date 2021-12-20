@@ -24,10 +24,10 @@ To enable this support which copies metadata from TideFinder to the
 OpenCPN/plugins fork:
 
 . Preparations:
-* Windows users are best off using git-bash. However, invoking the python
-scripts used here does not work out of the box. In git-bash, use the command
-`alias python='winpty python.exe'` as a temporary work around before taking
-more actions. See the https://stackoverflow.com/questions/32597209/[Stack overflow
+* Windows users should use git-bash. Nevertheless, using git-bash and invoking the python
+scripts used here does not work out of the box. In git-bash, you must use the command
+`alias python='winpty python.exe'` first, as a temporary work around before taking
+more actions. If you don't you will not be prompted for a password. See the https://stackoverflow.com/questions/32597209/[Stack overflow
 question] for more info
 * In the OpenCPN/plugins fork, make sure there is a remote named _upstream_.
 A oneliner fixes this:
@@ -60,12 +60,19 @@ $ git push -f origin auto:auto ④
 ③ Create a new branch on top of master or Beta +
 ④ Unconditionally overwrite the github branch
 +
+
 . _Steps 3-6 are also part of the xref::InstallConfigure/GithubPreps.adoc[
 Initial setup  workflow] and may thus already be completed_. +
 [[new-credentials]]
-Run _python ci/new-credentials_ in the TideFinder repo. The script
+
+in the TideFinder Local Replository (or your plugins repo) 
+Run _python ci/new-credentials_ . The script
 will ask for the ssh url to your plugins fork repo and a secret
-password. The ssh url, something like `git@github.com:Rasbats/plugins.git`,
+password. If there is no prompt for a password, stop and start over.
+The script must complete with a password entry to create <user>.enc and 
+<user>.pub files in the build-dpe folder, which secures your private key.
+
+The ssh url, something like `git@github.com:Rasbats/plugins.git`,
 can be found in the Github UI:
 +
 image::github/1.plugins.jpg[1.plugins.jpg]
@@ -82,7 +89,8 @@ $ git add build-deps/*.enc build-deps/*.pub
 $ git commit -m "Add git deployment key."
 $ git push origin master:master
 ....
-. Register the new public key (displayed by new-credentials) as a
+
+. In your forked "plugins" repository Register the new public key (displayed by new-credentials) as a
 deployment key with write permissions (Allow write access) on your
 github OpenCPN/plugins fork repo (in Settings | Deploy keys):
 +
