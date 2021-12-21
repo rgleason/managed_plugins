@@ -26,7 +26,8 @@ Studio 2017.
 
 === Debian/Ubuntu
 
-Install build dependencies using something like:
+If not already done, first clone the git sources. Then, in the plugin
+directory, install build dependencies using something like
 
 ....
  $ sudo apt install devscripts equivs
