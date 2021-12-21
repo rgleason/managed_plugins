@@ -12,7 +12,7 @@ authorises the connection with Github.
 
 == Providing the link to your OpenCPN/plugins fork
 
-Run steps 3-6 in the
+Run steps 3-7 in the
 xref::InstallConfigure/Catalog-Github-Integration.adoc#new-credentials[
 Metadata Push Page].
 Eventually, this ends up in a SSH-based url and
