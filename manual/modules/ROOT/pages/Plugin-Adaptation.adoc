@@ -79,6 +79,13 @@ A small edit for the flatpak SDK version may be needed.
 Remove _src/ocpn_plugin.h_ from the source files listed in _Plugin.cmake_. This is now
 found in the libs/api-16 directory. The file should also be removed from the src directory.
 
+== Testing
+
+When completed, it should be possible to run local builds as described in
+INSTALL.md or the xref:usage.adoc[Usage page] and
+xref:Local-Build.adoc[build dependencies page].
+
+
 == Appendix: Affected Files
 
 === Directories replaced by template files:
