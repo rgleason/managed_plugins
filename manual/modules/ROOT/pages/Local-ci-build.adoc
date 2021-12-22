@@ -1,0 +1,86 @@
+= Local  CI builds
+
+The local CI build environment is an experimental set of scripts
+in the scripts/ directory. The enables complete local builds which
+pushes results to Cloudsmith and Github in the same way as
+the build scripts on the various CI builders.
+
+These scripts are not required for regular, local builds.
+
+== Overview
+
+After installing build dependencies (see above) the local build environment
+supports local build and deployment. The basic pieces are:
+
+* The _local-build.rc_ configuration file. This is used by all other tools.
+* The _scripts/local-build_ python script which runs complete local builds
+  and deploys to cloudsmith
+* The build directory. Created by the build script it is the base for
+  testing and deploying the plugin.
+* A build directory can also be created by a "manual" build according
+  to INSTALL.md in the plugin.
+* _scripts/local-upload_ which supports uploading a build directory to
+  cloudsmith
+* _ci/git_push_ which pushes updated metadata in a build directory to a
+  clone of the plugins directory, supporting making a PR to said project
+  as described in the
+  xref:../InstallConfigure/Catalog-Github-Integration.adoc[github integration page]
+
+== The configuration file
+
+A sample configuration file is distributed  in _scripts/local-build.rc_.
+Instructions for modifying and installation is included in the sample.
+Note that all other tools depends on this file.
+
+== Local builds.
+
+The script _scripts/local-build_ supports building various platforms.
+With complete build dependencies in place it can build native Linux,
+cross-compiled Android and emulated Raspbian/armhf targets on a Linux
+host. At the time of writing this is 9 builds.
+
+On windows, the script builds a single Windows target.
+
+Use `python scripts/local-build help` to get started. The supported targets
+are listed. On Linux, all available targets can be built using `scripts/local-build
+gui`. All builds includes uploading to cloudsmith, pushing metadata and
+tarballs available for testing.
+
+Local builds creates different build  directories like _build-xenial_,
+_build-flatpak_ etc. in order to avoid collisions between different builds.
+
+== Testing the build
+
+When completed, the local build creates a build directory which contains
+a *.tar.gz tarball and an *.xml metadata file. The tarball can be tested using
+the Import Plugin function available in the OpenCPN Settings | Plugins page.
+
+== Local upload and metadata push
+
+After a local, "manual" build the results can be uploaded to Cloudsmith using
+the _scripts/local-upload_ script. The scripts needs the configuration from
+the configuration file. On linux, the usage is like:
+
+....
+$ source ~/.config/local-build.rc
+$ scripts/local-upload build
+....
+
+This assumes that the _build_ directory is the one used to build. Replace with
+actual directory if another location is used.
+
+Windows is similar, here using git-bash:
+
+....
+$ source $APPDATA/local-build.rc
+$ scripts/local-upload build-windows
+....
+
+Likewise, the metadata file in a build directory like 'build' can be pushed
+on Linux using:
+
+....
+$ ci/git-push build
+....
+
+On windows the script must be invoked using `python`.

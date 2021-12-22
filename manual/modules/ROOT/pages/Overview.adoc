@@ -26,8 +26,8 @@ using the OpenCPN _Import Plugin_ function.
 
 After installing the templates and enabling local builds, next step is to configure
 the cloud services. This is described in the xref:InstallConfigure.adoc[
-Installation and configuration] Page.  The cloud services includes Cloudsmith and
-various builders. 
+Cloud Services Configuration] Page.  The cloud services includes Cloudsmith,
+various builders and the catalog clone on Github.
 
 Cloudsmith is the repository where tarballs are stored. The builders
 are used to create these tarballs.
@@ -48,7 +48,8 @@ Metadata Push Configuration Page]
 == Local builds pushing to Cloudsmith.
 
 This is about scripts and configuration available in the scripts/ 
-directory. This functionality is still experimental and not documented.
+directory. This functionality is still experimental. Tentative
+documentation is in the xref:Local-ci-build.adoc[Local CI Builds] page.
 
 == Extra techniques that may be useful
 
