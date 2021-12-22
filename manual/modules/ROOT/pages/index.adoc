@@ -8,17 +8,15 @@
 The shipdriver template is a buildsystem template which can be applied to any OpenCPN plugin. The template provides:
 
 * Generation of tarballs which can be used by the plugin installer
+* Well-defined local builds of tarballs which can be imported
 * Uploading of tarballs to Cloudsmith
 * Generation of XML metadata with correct download urls and tarball checksum
 * Support for making PRs to the plugins project (i.e., the catalog) by committing metadata automatically into git.
-* Well-defined local builds of tarballs which can be imported
+* Simple, script-based template updates.
 
 Use of the template with a configured plugin is documented in the
 xref:usage.adoc[usage page]. These instructions are shipped with the
-plugin in the file xref:Install.adoc[INSTALL.md].
-
-The following guide illustrates how the template can be applied
-from scratch to a plugin.
+plugin in the file xref:Install.adoc[INSTALL.md]. They 
 
 This guide should be read alongside the README files in the
 https://github.com/Rasbats/ShipDriver_pi[ShipDriver repository].
@@ -30,37 +28,44 @@ A managed plugin becomes available for an OpenCPN user in the Plugins options di
 In general, plugin code flows like this:
 
 * Source code is stored and eventually tagged and released on Github
-* As soon as a change is committed a number of builder services build the code for around 10 platforms.
-* The compiled plugins are stored on cloudsmith. Here, they get a url which can be used to download them.
-* The builds also produce
- xref:Metadata-Flow.adoc[metadata files]
-with plugin data such as name, platform, various info and the
-download URL.
-* The metadata files are used to create a catalog. This catalog is the underpinning for the list of plugins in the OpenCPN plugin dialog.
+* As soon as a change is committed a number of builder services build
+  the code for around 10 platforms.
+* The compiled plugins are stored on cloudsmith. Here, they get a url
+  which can be used to download them.
+* The builds also produce xref:Metadata-Flow.adoc[metadata files] with
+  plugin data such as name, platform, various info and the download URL.
+* The metadata files are used to create a catalog. This catalog is the
+  underpinning for the list of plugins in the OpenCPN plugin dialog.
 
-== Introduction
+== Background
 
 Alec Leamas is the main architect of the managed plugin system for
 OpenCPN. His guide is
 https://github.com/leamas/OpenCPN/wiki[here].
 
 The
-xref:ocpn-dev-manual::/pm-overview-deployment.adoc[OpenCPN Developers Manual]
-has extensive general documentation for managed plugins. It also describes the two alternative template systems testplugin and shipdriver. This document provides more info on the shipdriver setup and workflow. 
+xref:ocpn-dev-manual::/pm-overview-deployment.adoc[
+OpenCPN Developers Manual] has extensive general documentation for
+managed plugins. It also describes the two alternative template systems
+testplugin and shipdriver. This document provides more info on the
+shipdriver setup and workflow. 
 
 A managed plugin will nearly always start as a `legacy' plugin that
 installs locally on the developers machine. Alec has provided new
-scripts to build a managed version of the plugin for OpenCPN. The legacy plugin is the starting point and the purpose of this guide is to describe the steps involved. The aim is to simplify the workflow.
+scripts to build a managed version of the plugin for OpenCPN. The
+legacy plugin is the starting point and the purpose of this guide is
+to describe the steps involved. The aim is to simplify the workflow.
 
 The reference plugin where the development work has been carried out is
-https://github.com/Rasbats/shipdriver_pi[ShipDriver]
-(Master branch).
+https://github.com/Rasbats/shipdriver_pi[ShipDriver] (Master branch).
 To show the process from the start
 https://github.com/Rasbats/TideFinder_pi[TideFinder] is used as an
 illustration.
 
 Mike Rossiter, who developed the ShipDriver and TideFinder plugins,
-assisted by testing the workflow. He has produced this guide to assist developers in making a managed plugin. Please report any errors or omissions using the issues tab of this GitHub repository.
+assisted by testing the workflow. He has produced this guide to assist
+developers in making a managed plugin. Please report any errors or
+omissions using the issues tab of this GitHub repository.
 
 == Index
 

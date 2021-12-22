@@ -1,13 +1,9 @@
 = Overview
 :sectnums:
 
-== Introduction
-
 The templates provides functionality for making local builds, continous
 integration (CI) builds and optional support for making local builds
 which pushes results to CI repositories. 
-
-A plugin using the templates must be compatible with the Plugin Installer.
 
 This page describes the overall process to implement these functions.
 
