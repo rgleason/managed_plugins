@@ -5,8 +5,8 @@ plugins. INSTALL.md is the preferred version.
 
 ---
 
-Install build dependencies as described in the manual.
-Then clone this repository, enter it and make
+Install build dependencies as described in the xref:Local-Build.adoc[
+build dependencies page]. Then clone this repository, enter it and make +
 `rm -rf build; mkdir build; cd build`.
 
 A "normal" (not flatpak) tar.gz tarball which can be used by the new plugin
