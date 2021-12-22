@@ -1,33 +1,58 @@
 = Overview
+:sectnums:
 
-== Changes to the plugin
+== Introduction
 
-xref:Plugin-Adaptation.adoc[Adapting the legacy plugin]
+The templates provides functionality for making local builds, continous
+integration (CI) builds and optional support for making local builds
+which pushes results to CI repositories. 
 
-Go to this section for a description of the additional files needed to enable the plugin to be compiled and hosted by the cloud services. Also the changes to CMakeLists.txt for the plugin and the changes to the source code.
+A plugin using the templates must be compatible with the Plugin Installer.
 
-== Installation and configuration
+This page describes the overall process to implement these functions.
 
-xref:InstallConfigure.adoc[Installation and configuration]
+== Adapt plugin source to Plugin  Installer.
 
-This details how the Cloud services are set up and used. Also the changes to the various Github repositories.
+The plugin must be able to work with the plugin installer which for a
+legacy plugin means that the source code needs to be updated.  This is 
+described in the xref:ocpn-dev-manual::Plugin-Pi-Adaptation.adoc[Developer
+Manual Page].
 
-== First build
+== Install the templates and enable local builds
+Installation of the templates is described in the xref:Plugin-Adaptation.adoc[
+Plugin Adaptation Page].
 
-After setting up the various cloud service the first build can be made. This results in the tarballs being held in the Cloudsmith repository. 
+After installing the templates, local builds as described in xref:usage.adoc[
+Usage Page] can be done. Such builds generates tarballs which can be tested
+using the OpenCPN _Import Plugin_ function.
+
+== Cloud services  configuration
+
+After installing the templates and enabling local builds, next step is to configure
+the cloud services. This is described in the xref:InstallConfigure.adoc[
+Installation and configuration] Page.  The cloud services includes Cloudsmith and
+various builders. 
+
+Cloudsmith is the repository where tarballs are stored. The builders
+are used to create these tarballs.
 
 == Integrating with the OpenCPN catalog
 
-* xref:InstallConfigure/Catalog-Github-Integration.adoc[Integrating with the catalog using Github]
+Next step is to configure the metadata flow. This is the process which makes it
+possible for a plugin developer to include and update the plugin in the catalog,
+basically to make the plugin available for end users.
 
-* xref:Metadata-Flow.adoc[Introduction to the metadata flow]
+The metadata flow is described in the
+xref:Metadata-Flow.adoc[metadata flow intro page]
 
-== Local builds
+The configuration of this flow is described in  the
+xref:InstallConfigure/Catalog-Github-Integration.adoc[
+Metadata Push Configuration Page]
 
-* xref:Local-Build.adoc[Installing build dependencies]
-* xref:usage.adoc[Running local builds]
+== Local builds pushing to Cloudsmith.
 
-A local build of the plug can be carried out using the tools described on these pages.
+This is about scripts and configuration available in the scripts/ 
+directory. This functionality is still experimental and not documented.
 
 == Extra techniques that may be useful
 
