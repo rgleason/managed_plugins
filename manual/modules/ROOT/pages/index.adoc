@@ -43,8 +43,7 @@ Alec Leamas is the main architect of the managed plugin system for
 OpenCPN. His guide is
 https://github.com/leamas/OpenCPN/wiki[here].
 
-The
-xref:ocpn-dev-manual::/pm-overview-deployment.adoc[
+The xref:ocpn-dev-manual::/pm-overview-deployment.adoc[
 OpenCPN Developers Manual] has extensive general documentation for
 managed plugins. It also describes the two alternative template systems
 testplugin and shipdriver. This document provides more info on the
