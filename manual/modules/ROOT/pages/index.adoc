@@ -23,7 +23,10 @@ https://github.com/Rasbats/ShipDriver_pi[ShipDriver repository].
 
 == The overall managed plugin flow
 
-A managed plugin becomes available for an OpenCPN user in the Plugins options dialog. Here, a number of plugins are available for users so they can just click on a plugin to install it. The managed plugins workflow is the way a plugin becomes available for users in this UI dialog.
+A managed plugin becomes available for an OpenCPN user in the Plugins
+options dialog. Here, a number of plugins are available for users so
+they can just click on a plugin to install it. The managed plugins workflow
+is the way a plugin becomes available for users in this UI dialog.
 
 In general, plugin code flows like this:
 
@@ -37,10 +40,15 @@ In general, plugin code flows like this:
 * The metadata files are used to create a catalog. This catalog is the
   underpinning for the list of plugins in the OpenCPN plugin dialog.
 
+== Installation of templates.
+
+The template installation process is described in the
+xref:Plugin-Adaptation.adoc[Plugin Adaptation Page].
+
 == Background
 
 Alec Leamas is the main architect of the managed plugin system for
-OpenCPN. His guide is
+OpenCPN. The reference documentation is available 
 https://github.com/leamas/OpenCPN/wiki[here].
 
 The xref:ocpn-dev-manual::/pm-overview-deployment.adoc[
@@ -49,17 +57,14 @@ managed plugins. It also describes the two alternative template systems
 testplugin and shipdriver. This document provides more info on the
 shipdriver setup and workflow. 
 
-A managed plugin will nearly always start as a `legacy' plugin that
+A managed plugin will often start as a `legacy' plugin that
 installs locally on the developers machine. Alec has provided new
 scripts to build a managed version of the plugin for OpenCPN. The
 legacy plugin is the starting point and the purpose of this guide is
 to describe the steps involved. The aim is to simplify the workflow.
 
-The reference plugin where the development work has been carried out is
-https://github.com/Rasbats/shipdriver_pi[ShipDriver] (Master branch).
-To show the process from the start
-https://github.com/Rasbats/TideFinder_pi[TideFinder] is used as an
-illustration.
+This workflow is not limited to legacy plugins, it can basically be
+applied to any plugin.
 
 Mike Rossiter, who developed the ShipDriver and TideFinder plugins,
 assisted by testing the workflow. He has produced this guide to assist
