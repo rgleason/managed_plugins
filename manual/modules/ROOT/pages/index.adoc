@@ -65,19 +65,3 @@ Mike Rossiter, who developed the ShipDriver and TideFinder plugins,
 assisted by testing the workflow. He has produced this guide to assist
 developers in making a managed plugin. Please report any errors or
 omissions using the issues tab of this GitHub repository.
-
-== Index
-
-xref:Overview.adoc[Overview]
-
-xref:Plugin-Adaptation.adoc[Adapting the plugin]
-
-xref:InstallConfigure.adoc[Installation and configuration]
-
-xref:Metadata-Flow.adoc[Metadata flow]
-
-xref:usage.adoc[End user usage]
-
-xref:Local-Build.adoc[Local builds]
-
-xref:Useful-Stuff.adoc[Extras]
