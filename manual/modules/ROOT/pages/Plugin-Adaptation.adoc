@@ -3,9 +3,15 @@
 
 == Introduction
 
-In order to enable Continous Integration (CI) a number of template files
-and directories needs to be installed in the plugin sources. This page
-describes this process.
+In order to enable both local builds and Continous Integration (CI)
+a number of template files and directories needs to be installed in
+the plugin sources. This page describes this process.
+
+The reference plugin where the development work has been carried out is
+https://github.com/Rasbats/shipdriver_pi[ShipDriver] (Master branch).
+To show the process from start
+https://github.com/Rasbats/TideFinder_pi[TideFinder] is used as an
+illustration.
 
 Before using the shipdriver templates a plugin must as a first step
 be adapted to the Plugin Installer as described in the
@@ -92,10 +98,10 @@ xref:Local-Build.adoc[build dependencies page].
 
 [cols="2",width="70%"]
 |===
-| .circleci | build-deps
-| buildwin  | ci
-| cmake     | libs
-| scripts   | cmake
+| .circleci | ci
+| buildwin  | libs
+| cmake     | cmake
+| scripts   |
 |===
 
 
