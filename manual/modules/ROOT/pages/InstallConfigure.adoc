@@ -1,11 +1,17 @@
-= Installation and configuration
+= CI services configuration
 
-This section describes how the various services are configured. The plugin is built and the tarball and metadata arrive in the Cloudsmith repository. Finally a Pull Request is made from Github, which results in the plugin being available from the OpenCPN catalog. 
+This section describes how the various services are configured. When
+completed, all tarballs built are uploaded to Cloudsmith and available
+for end-user downloads.
 
-* xref:InstallConfigure/GithubPreps.adoc[Github OpenCPN/plugins fork]
+Likewise, all XML metadata files are pushed to a clone of
+OpenCPN/plugins. This clone is used to create a Pull Request against
+the catalog, a process which makes the plugin available to the end user.
 
-* xref:InstallConfigure/Cloudsmith.adoc[Cloudsmith]
-
-* xref:InstallConfigure/Builders/IntroBuilders.adoc[Builders]
+. xref:InstallConfigure/GithubPreps.adoc[Github OpenCPN/plugins fork]
+. xref:InstallConfigure/Cloudsmith.adoc[Cloudsmith]
+. xref:InstallConfigure/Builders/IntroBuilders.adoc[Builders]
+. xref:InstallConfigure/Catalog-Github-Integration.adoc[Metadata push]
+. xref:InstallConfigure/GitHub.adoc[Final checks and testing]
 
 xref:Overview.adoc[<- ShipDriver template overview]

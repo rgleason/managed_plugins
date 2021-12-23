@@ -1,8 +1,6 @@
 = Adapting the legacy plugin
 :sectnums:
 
-== Introduction
-
 In order to enable both local builds and Continous Integration (CI)
 a number of template files and directories needs to be installed in
 the plugin sources. This page describes this process.

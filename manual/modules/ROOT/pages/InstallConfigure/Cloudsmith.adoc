@@ -22,7 +22,7 @@ creating repositories for your plugin.
 
 This step is optional. A membership is not required to create
 repositories, but makes it possible to create them in the same area as
-some other plugins. However, creating the same three repositories
+some other plugins. However, creating the same repositories
 without being part of the organization works just fine.
 
 *To Join* Send an email to Rick Gleason, Jon Gough or Dave Register
@@ -61,17 +61,33 @@ image:2cloudsmith.jpg[2cloudsmith.jpg]
 
 *Many repositories have packages already in place.*
 
+== Create the repositories.
+
+As mentioned, this works in the same way if using the cloudsmith organization
+or not. Eventually, three repositories could be configured. The names
+are formally arbitrary, but usually named like
+
+  - _Tidefinder-Alpha_ ur _tidefinder-unstable_: This is basically a scratch
+     build repository.
+  - _Tidefinder-Beta_: The repository for beta builds.
+  - _Tidefinder-Prod_ or _tidefinder-stable_: The repository for stable
+    builds i. e., builds published to end users.
+
+The beta repository is not required, just using two repositories like 
+stable/unstable also works fine.
+
 image:3cloudsmith.jpg[3cloudsmith.jpg]
-**To create the repositories for TideFinder click the plus sign at the right of the screen.**
+To create the repositories for TideFinder click the plus sign at the right
+of the screen.
 
 image:4cloudsmith.jpg[4cloudsmith.jpg]
 
 *Enter the details for the repository starting with the alpha
-(experimental) repo.*
+(unstable) repo.*
 
 image:5cloudsmith.jpg[5cloudsmith.jpg]
 
-*Repeat for the beta and prod (production) repositories.*
+*Repeat for the beta and prod (stable) repositories.*
 
 image:6cloudsmith.jpg[6cloudsmith.jpg]
 

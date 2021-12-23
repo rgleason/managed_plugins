@@ -5,18 +5,16 @@
 
 ==  The template at a glance
 
-The shipdriver template is a buildsystem template which can be applied to any OpenCPN plugin. The template provides:
+The shipdriver template is a buildsystem template which can be
+applied to any OpenCPN plugin. The template provides:
 
 * Generation of tarballs which can be used by the plugin installer
 * Well-defined local builds of tarballs which can be imported
 * Uploading of tarballs to Cloudsmith
 * Generation of XML metadata with correct download urls and tarball checksum
-* Support for making PRs to the plugins project (i.e., the catalog) by committing metadata automatically into git.
+* Support for making PRs to the plugins project (i.e., the catalog) by
+  committing metadata automatically into git.
 * Simple, script-based template updates.
-
-Use of the template with a configured plugin is documented in the
-xref:usage.adoc[usage page]. These instructions are shipped with the
-plugin in the file xref:Install.adoc[INSTALL.md]. They 
 
 This guide should be read alongside the README files in the
 https://github.com/Rasbats/ShipDriver_pi[ShipDriver repository].
@@ -40,10 +38,10 @@ In general, plugin code flows like this:
 * The metadata files are used to create a catalog. This catalog is the
   underpinning for the list of plugins in the OpenCPN plugin dialog.
 
-== Installation of templates.
+== Template installation.
 
 The template installation process is described in the
-xref:Plugin-Adaptation.adoc[Plugin Adaptation Page].
+xref:Overview.adoc[Adaptation Overview Page].
 
 == Background
 

@@ -35,7 +35,7 @@ A oneliner fixes this:
     $ git ls-remote --exit-code upstream &>/dev/null || \
         git remote add upstream https://github.com/OpenCPN/plugins.git
 
-. Create a branch called _auto_ in the OpenCPN/plugins fork:
+. Create a branch called _auto_ in the OpenCPN/plugins fork: [[create-auto]]
 * For builds targeting the *master catalog*: drop possible existing auto
 branch and create a new on top of master:
 +
@@ -126,7 +126,8 @@ in the builder.
 If GIT_KEY_PASSWORD or GIT_REPO is missing git-push will not do anything
 besides some logging.
 
-== Making the Pull Request (PR) to OpenCPN/plugins
+
+== Making the Pull Request (PR) to OpenCPN/plugins [[make-PR]]
 
 The builders have made commits in the OpenCPN/plugins fork's auto
 branch, one for each build. These commits are the metadata files which
