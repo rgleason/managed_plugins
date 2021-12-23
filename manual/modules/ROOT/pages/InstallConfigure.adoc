@@ -8,8 +8,4 @@ This section describes how the various services are configured. The plugin is bu
 
 * xref:InstallConfigure/Builders/IntroBuilders.adoc[Builders]
 
-* xref:InstallConfigure/Cloud-Service-Changes.adoc[Cloud service changes]
-
-* xref:InstallConfigure/GitHub.adoc[Github]
-
 xref:Overview.adoc[<- ShipDriver template overview]

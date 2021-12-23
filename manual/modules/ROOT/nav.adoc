@@ -11,8 +11,6 @@
 *** xref:InstallConfigure/Builders/Drone.adoc[Drone.io]
 *** xref:InstallConfigure/Builders/Travis.adoc[Travis]
 ** xref:InstallConfigure/BuilderEnv.adoc[Builder environment]
-** xref:InstallConfigure/Cloud-Service-Changes.adoc[Cloud service changes]
-** xref:InstallConfigure/GitHub.adoc[GitHub]
 ** xref:InstallConfigure/Catalog-Github-Integration.adoc[Integrating the Catalog with Github]
 * xref:Versioning.adoc[Versioning]
 * xref:Local-Build.adoc[Local Builds]
