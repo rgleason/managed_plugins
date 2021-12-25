@@ -34,25 +34,18 @@ are used to create these tarballs.
 
 == Integrating with the OpenCPN catalog
 
-Next step is to configure the metadata flow. This is the process which makes it
-possible for a plugin developer to include and update the plugin in the catalog,
-basically to make the plugin available for end users.
-
-The metadata flow is described in the
-xref:Metadata-Flow.adoc[metadata flow intro page]
-
-The configuration of this flow is described in  the
-xref:InstallConfigure/Catalog-Github-Integration.adoc[
-Metadata Push Configuration Page]
-
-== Local builds pushing to Cloudsmith.
-
-This is about scripts and configuration available in the scripts/ 
-directory. This functionality is still experimental. Tentative
-documentation is in the xref:Local-ci-build.adoc[Local CI Builds] page.
+Next step is to create a Pull Request against the OpenCPN catalog, thus
+making plugin available for end users. Thisis described in the
+xref:Metadata-Flow.adoc[Metadata Flow Intro Page] and
+xref:InstallConfigure/Catalog-Github-Integration.adoc[Metadata Push Usage Page]
 
 == Extra techniques that may be useful
 
-xref:Useful-Stuff.adoc[Additional techniques]
+* Scripts and configuration available in the scripts/ 
+directory. This functionality is still experimental. Tentative
+documentation is in the xref:Local-ci-build.adoc[Local CI Builds] page.
+
+
+* xref:Useful-Stuff.adoc[Additional techniques]
 
 xref:index.adoc[<- The ShipDriver template]
