@@ -23,7 +23,7 @@ These parts could be used in different workflows.
 
 The version syntax is basically
 
-    major.minor.patch[.tweak][-prerelease][+buildinfo_target]
+    major.minor.patch[.tweak][-prerelease]+[buildinfo_]target
 
 An example:
 

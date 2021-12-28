@@ -13,102 +13,8 @@ PR.
 
 == Configuration
 
-Prerequisites:
-
-* A plugin. Here, TideFinder is used as example.
-* A fork of
-https://github.com/OpenCPN/plugins.git[https://github.com/OpenCPN/plugins.git]
-on Github.
-
-To enable this support which copies metadata from TideFinder to the
-OpenCPN/plugins fork:
-
-. Preparations: [[Preparations]]
-* Windows users are best off using git-bash. However, invoking the python
-scripts used here does not work out of the box. In git-bash, use the command
-`alias python='winpty python.exe'` as a temporary work around before taking
-more actions. See the https://stackoverflow.com/questions/32597209/[Stack overflow
-question] for more info including a more permanent fix.
-* In the OpenCPN/plugins fork, make sure there is a remote named _upstream_.
-A oneliner fixes this:
-
-    $ git ls-remote --exit-code upstream &>/dev/null || \
-        git remote add upstream https://github.com/OpenCPN/plugins.git
-
-. Create a branch called _auto_ in the OpenCPN/plugins fork: [[create-auto]]
-* For builds targeting the *master catalog*: drop possible existing auto
-branch and create a new on top of master:
-+
-....
-$ git branch -D auto ①
-$ git remote update upstream ②
-$ git checkout -b auto upstream/master ③
-$ git push -f origin auto:auto ④
-....
-* Builds targeting the *beta catalog* is handled in a similar way:
-+
-....
-$ git branch -D auto ①
-$ git remote update upstream ②
-$ git checkout -b auto upstream/Beta ③
-$ git push -f origin auto:auto ④
-....
-+
-① Remove any existing auto branch, disregard error messages. +
-② Make sure our data about the github catalog is updated. +
-③ Create a new branch on top of master or Beta +
-④ Unconditionally overwrite the github branch
-+
-. _Steps 3-7 are also part of the xref::InstallConfigure/GithubPreps.adoc[
-Initial setup  workflow] and may thus already be completed_. +
-[[new-credentials]]
-+
-You will need the ssh url to your OpenCPN/plugins fork, something like
-`git@github.com:Rasbats/plugins.git`. This can be found in the Github UI:
-+
-image::github/1.plugins.jpg[1.plugins.jpg]
-+
-Or, in the OpenCPN/plugins fork, on the command line using +
-`git config --get remote.origin.url`
-+
-. Run _python ci/new-credentials_ in the TideFinder repo. The script
-will ask for the ssh url to your plugins fork repo and a secret
-password.
-+
-NOTE: If the script does not complete on Windows, check that the
-`alias python= ...` command mentioned in xref:#Preparations[Preparations]
-has been executed.
-+
-. Dont forget the password...
-. The script will create an encrypted private + a public key named
-_username.enc_ and _username.pub_ in the TideFinder _build-deps_ directory.
-Commit and push these keys to Github:
-+
-....
-   $ git add build-deps/*.enc build-deps/*.pub
-   $ git commit -m "Add git deployment key."
-   $ git push origin master:master
-....
-
-. In your forked "plugins" repository Register the new public key (displayed
-by new-credentials) as a
-deployment key with write permissions (Allow write access) on your github
-OpenCPN/plugins fork repo (in Settings | Deploy keys):
-+
-image:github/10.deploy.key.jpg[10.deploy.key.jpg]
-+
-After adding the key things should look like:
-+
-image:github/9.deploy.key.jpg[9.deploy.key.jpg]
-+
-Note that despite images, the public key is indeed public; there is no
-need to keep it secret.
-
-. Set environment variables in all builders like Circleci, drone.io and
-Appveyor:
-* GIT_KEY_PASSWORD: Password entered to new-credentials.
-* GIT_REPO: The ssh-based url to your OpenCPN/plugins clone, the same as
-entered to new-credentials.
+The configuration is documented in the xref:InstallConfigure/GithubPreps.adoc[
+plugins fork configuration page]
 
 == During the build
 
@@ -209,7 +115,7 @@ remove all older files. When completed, commit and  push:
 == Troubleshooting
 
 The _ci/git-push_ script can be run manually for debugging purposes
-as described in the xref:Local-Build.adoc[Local build page]
+as described in the xref:Local-ci-build.adoc[Local CI build page]
 
 == Security
 
@@ -223,5 +129,3 @@ separate ssh key is used for this purpose, a key which could be easily
 revoked.
 
 xref:../Overview.adoc[<- Shipdriver template overview]
-
-

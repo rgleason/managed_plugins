@@ -73,12 +73,4 @@ Don't care that much about the commit messages. The important thing is
 that the builders actually have pushed commits to the auto branch.
 
 
-== Pull request from plugins
-
-The final part after checking that the tarballs are in place at Cloudsmith
-and the metadata is pushed is to make a Pull Request against the
-plugin catatalog to make plugins available to end users. This is described
-in the xref:InstallConfigure/Catalog-Github-Integration.adoc#make-PR[metadata push page] 
-
-
 xref:../Overview.adoc[<- Shipdriver template overview]

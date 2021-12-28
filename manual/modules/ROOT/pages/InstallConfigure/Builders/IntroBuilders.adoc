@@ -1,6 +1,17 @@
 = Builders
 
-The following free opensource accounts/services are available:
+All builders needs the environment variables CLOUDSMITH_API_KEY, GIT_REPO
+and GIT_KEY_PASSWORD.
+
+In some cases (usually not) also the variables CLOUDSMITH_UNSTABLE_REPO,
+CLOUDSMITH_BETA_REPO and CLOUDSMITH_STABLE_REPO are also needed
+
+These variables are documented in the 
+xref:InstallConfigure/BuilderEnv.adoc[Builder Environment Page].
+
+---
+
+The following free opensource accounts/services are supported:
 
 * xref:../InstallConfigure/Builders/Appveyor.adoc[Appveyor]
 
@@ -16,6 +27,6 @@ Hosts a virtual machine for the creation of installers for the Raspbian ARMHF sy
 
 * xref:../InstallConfigure/Builders/Travis.adoc[Travis]
 
-A similar maching to Drone for the creation of installers for the Raspbian ARMHF system.
+A similar machine to Drone for the creation of installers for the Raspbian ARMHF system.
 
 xref:../../InstallConfigure.adoc[<- Installation and configuration]
