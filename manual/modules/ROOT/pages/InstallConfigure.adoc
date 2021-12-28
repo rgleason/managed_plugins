@@ -11,7 +11,6 @@ the catalog, a process which makes the plugin available to the end user.
 . xref:InstallConfigure/GithubPreps.adoc[Github OpenCPN/plugins fork]
 . xref:InstallConfigure/Cloudsmith.adoc[Cloudsmith]
 . xref:InstallConfigure/Builders/IntroBuilders.adoc[Builders]
-. xref:InstallConfigure/Catalog-Github-Integration.adoc[Metadata push]
 . xref:InstallConfigure/GitHub.adoc[Final checks and testing]
 
 xref:Overview.adoc[<- ShipDriver template overview]
