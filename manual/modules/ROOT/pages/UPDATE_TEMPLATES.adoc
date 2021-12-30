@@ -31,6 +31,10 @@ It is also possible to use wget instead of curl, like
 `wget $repo/update-templates`. Windows works the same way when using git-bash,
 except that the `chmod` command does not make sense here and hence is omitted.
 
+NOTE: To just copy update-templates from a local shipdriver clone has caused
+problems for some users. The only supported workflow is the one  described
+here.
+
 
 == Bootstrap - Windows (cmd.com)
 
