@@ -126,12 +126,12 @@ part of the git-push message is something like
        6beead5..8c0a9a9  auto -> auto
 +
 which means that auto branch is updated to 8c0a9a9 . Remember that commit
-
++
 2. In the OpenCPN/plugins clone check that commit:
-....
-    $ git fetch origin
-    $ git show 8c0a9a9
-....
++
+     $ git fetch origin
+     $ git show 8c0a9a9
++
 This will display the actual changes to the metadata file. Are they sound?
 +
 3. Check the metadata file using some editor, it lives in the metadata directory. 
@@ -139,9 +139,9 @@ If it's fine: done.
 +
 4. If it's not as expected: check the log for the metadata file. Assuming this is 
 about o-charts-plugin-raspbian-armhf-10.xml we do
-....
++
     $ git log --oneline  metadata/o-charts-plugin-raspbian-armhf-10.xml
-....
++
 This should give a hint about what has happened to the file after 8c0a9a9
 
 == Security
