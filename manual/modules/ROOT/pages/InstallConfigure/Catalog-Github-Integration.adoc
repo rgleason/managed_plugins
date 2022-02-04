@@ -134,11 +134,11 @@ which means that auto branch is updated to 8c0a9a9 . Remember that commit
 +
 This will display the actual changes to the metadata file. Are they sound?
 +
-3. Check the metadata file using some editor, it lives in the metadata directory. 
-If it's fine: done.
+3. Checkout the auto branch (`git checkout auto`) and check the metadata file using 
+some editor. It lives in the metadata directory. If it's fine: done.
 +
 4. If it's not as expected: check the log for the metadata file. Assuming this is 
-about o-charts-plugin-raspbian-armhf-10.xml we do
+about o-charts-plugin-raspbian-armhf-10.xml:
 +
     $ git log --oneline  metadata/o-charts-plugin-raspbian-armhf-10.xml
 +
