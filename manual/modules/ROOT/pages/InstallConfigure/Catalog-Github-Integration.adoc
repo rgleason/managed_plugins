@@ -120,7 +120,7 @@ as described in the xref:Local-ci-build.adoc[Local CI build page]
 If metadata from builds does not show up in the auto branch:
 
 1. First check the build logs: does the git-push step complete? Last 
-part of the git-push message is something like
+part of a successful git-push message should contain something like
 +
     To github.com:leamas/plugins.git
        6beead5..8c0a9a9  auto -> auto
