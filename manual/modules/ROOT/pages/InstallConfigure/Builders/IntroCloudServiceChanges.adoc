@@ -78,4 +78,4 @@ image:build.errors/3.circleci.error.jpg[3.circleci.error.jpg]
 Again this is due to copying files on Windows. Once set as above the
 build will work.
 
-xref:Alternative-Workflow.adoc[The Shipdriver Workflow]
+xref:AlternativeWorkflow.adoc[The Shipdriver Workflow]
