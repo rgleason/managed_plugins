@@ -1,6 +1,6 @@
 name: AlternativeWorkflow
 title: Shipdriver Managed Workflow for the OpenCPN plugins
-version: master
+version: ~
 start_page: ROOT:index.adoc
 nav:
 - modules/ROOT/nav.adoc
