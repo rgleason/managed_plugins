@@ -47,4 +47,8 @@ mdc.SetTextForeground(m_text_color);
 //mdc.SetTextBackground(wxTRANSPARENT);`  ******* Removed this line to get openGL working in otcurrent_pi
 ....
 
+*4. Empty commit:*
+
+$ git commit --allow-empty -m "Trigger notification"
+
 xref:Overview.adoc[<- Shipdriver template overview]
