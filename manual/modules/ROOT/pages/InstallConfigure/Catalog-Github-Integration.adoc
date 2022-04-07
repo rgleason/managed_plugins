@@ -67,7 +67,7 @@ $ git checkout auto
 $ git rebase master
 $ git checkout master
 $ git merge --squash auto
-$ git commit
+$ git commit -m "Merging auto branch into master"
 ....
 
 The rebase operation should not be strictly necessary, but will pick up
@@ -88,7 +88,7 @@ $ git checkout auto
 $ git rebase Beta
 $ git checkout Beta
 $ git merge --squash auto
-$ git commit
+$ git commit -m "Merging auto branch into Beta"
 ....
 
 The new TideFinder metadata files have been added to your
