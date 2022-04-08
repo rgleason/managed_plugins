@@ -42,60 +42,67 @@ work with the plugin installer of the main OpenCPN program. In beta and
 production mode they become part of the beta and master catalogs of
 plugins in OpenCPN.
 
-=== Syncing branches
+=== Merging the auto branch
 
-Before making the pull request to OpenCPN/plugins make sure your fork of
-this is up to date.
-https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[This guide] has been found useful. Or on the CLI:
+The files in the auto branch needs to be merged into either master, Beta
+or Alpha branch. When done, the branch could be used to make a PR against
+https://github.com/opencpn/plugins[the plugins project]. The workflow
+is somehat different if working with master or Beta branch.
 
+Using Alpha is basically the same as Beta, substituting Beta with Alpha.
+
+==== Using master
+
+First: sync the local master branch with upstream using
+https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[this guide]
+or on the command line:
 ....
 $ git remote update upstream
 $ git checkout master
 $ git rebase upstream/master
-$ git checkout Beta
-$ git rebase upstream/Beta
 ....
-If the Beta branch isn't used, the last two commands can be omitted.
 
-=== Master catalog
-
-Adding metadata files from the OpenCPN/plugins fork auto branch to the
-master branch goes like this:
+Add the files in the auto branch to master using:
 
 ....
 $ git fetch origin auto:auto
 $ git checkout auto
-$ git rebase -X theirs master
+$ git rebase master
 $ git checkout master
 $ git merge --squash auto
 $ git commit -m "Merging auto branch into master"
 ....
 
 The rebase operation should not be strictly necessary, but will pick up
-possible errors if the metadata has been changed by other means. Using 
-`-X theirs` means that the auto branch should be used if there are conflicts. 
+possible errors if the metadata has been changed by other means.
 The `--squash` option lumps the too many commits in the auto branch (one for
 each build) to a single one, keeping the master branch tidy.
 
 A PR (pull request) can then be made from the master branch for updating
 the master catalog of OpenCPN/plugins.
 
-=== Beta catalog
+==== Using Beta
 
-If you configured for Beta metadata files you need:
+First: sync the local Beta branch with upstream using
+https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[this guide]
+or on the command line:
+....
+$ git remote update upstream
+$ git checkout Beta
+$ git rebase upstream/Beta
+....
+
+Add the files in the auto branch to Beta using:
 
 ....
 $ git fetch origin auto:auto
 $ git checkout auto
-$ git rebase -X theirs Beta
+$ git rebase Beta
 $ git checkout Beta
 $ git merge --squash auto
 $ git commit -m "Merging auto branch into Beta"
 ....
 
-The new TideFinder metadata files have been added to your
-OpenCPN/plugins fork Beta branch. A PR, if accepted, results in updating
-the Beta catalog of OpenCPN/plugins.
 
 === Cleaning up old metadata
 
@@ -121,11 +128,11 @@ Create a catalog and check it against the xsd specification:
     $ xmllint --noout ocpn-plugins.xml
 ....
 
-This xmllint check is not necessary, it's done automatically on every PR when
-pushed. However, it shortcuts handling of problems.
+This xmllint check is not strictly necessary, it's done automatically on
+every PR when pushed. However, it shortcuts handling of problems.
 
-When testing is complete or just not deemed necessary: push using 
-`git push origin master` or so.
+When testing is complete or just not deemed necessary: push using +
+`git push origin master` or `git push origin Beta`.
 
 == Troubleshooting
 
