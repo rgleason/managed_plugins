@@ -120,7 +120,7 @@ Create a catalog and check it against the xsd specification:
     $ xmllint --noout ocpn-plugins.xml
 ....
 
-This xmllint check is not necessary, it's done automatically an every PR when
+This xmllint check is not necessary, it's done automatically on every PR when
 pushed. However, it shortcuts handling of problems.
 
 When testing is complete or just not deemed necessary: push using 
