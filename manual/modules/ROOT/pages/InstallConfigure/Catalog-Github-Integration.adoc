@@ -64,15 +64,16 @@ master branch goes like this:
 ....
 $ git fetch origin auto:auto
 $ git checkout auto
-$ git rebase master
+$ git rebase -X theirs master
 $ git checkout master
 $ git merge --squash auto
 $ git commit -m "Merging auto branch into master"
 ....
 
 The rebase operation should not be strictly necessary, but will pick up
-possible errors if the metadata has been changed by other means. The
---squash option lumps the too many commits in the auto branch (one for
+possible errors if the metadata has been changed by other means. Using 
+`-X theirs` means that the auto branch should be used if there are conflicts. 
+The `--squash` option lumps the too many commits in the auto branch (one for
 each build) to a single one, keeping the master branch tidy.
 
 A PR (pull request) can then be made from the master branch for updating
@@ -85,7 +86,7 @@ If you configured for Beta metadata files you need:
 ....
 $ git fetch origin auto:auto
 $ git checkout auto
-$ git rebase Beta
+$ git rebase -X theirs Beta
 $ git checkout Beta
 $ git merge --squash auto
 $ git commit -m "Merging auto branch into Beta"
