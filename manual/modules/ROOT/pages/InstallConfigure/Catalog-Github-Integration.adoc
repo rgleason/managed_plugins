@@ -106,12 +106,25 @@ catalog. The command
 ....
 
 lists all metadata files for given plugin in date order. Use `git rm` to
-remove all older files. When completed, commit and  push:
-
+remove all older files. When completed, commit using for example:
 ....
     $ git commit -m "Removing obsoleted metadata."
-    $ git push
 ....
+
+=== Check metadata and push
+
+Create a catalog and check it against the xsd specification:
+....
+    $ tools/ocpn-metadata  generate --userdir metadata/ \
+        --destfile ocpn-plugins.xml --force
+    $ xmllint --noout ocpn-plugins.xml
+....
+
+This xmllint check is not necessary, it's done automatically an every PR when
+pushed. However, it shortcuts handling of problems.
+
+When testing is complete or just not deemed necessary: push using 
+`git push origin master` or so.
 
 == Troubleshooting
 
