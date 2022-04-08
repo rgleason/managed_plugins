@@ -1,4 +1,5 @@
 = Automatic Metadata Git Push
+:sectnums:
 
 Shipdriver-based plugins supports pushing metadata
 to a remote git repository. The goal is to simplify the process for
