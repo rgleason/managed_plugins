@@ -1,5 +1,8 @@
 = Setting up Drone
 
+NOTE! 
+The Drone builder is not in active use, this page is for reference only
+
 *Register using your GitHub login*
 
 *After logging in Drone has a list of your GitHub repos. Activate
