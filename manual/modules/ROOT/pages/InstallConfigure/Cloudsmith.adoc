@@ -100,16 +100,20 @@ lifecyle setting for the repositories. Use Admin Access to each repo.*
 
 image:8cloudsmith.jpg[8cloudsmith.jpg]
 
-*The only setting needed is Retention Rules.*
+*The only setting needed is "Artifact Lifecycle".*
 
 image:9cloudsmith.jpg[9cloudsmith.jpg]
 
-*Disable the `Limit By Days' and press the Update button.*
+*Disable the `Limit By Days' (set to "0") and press the Update button.*
 
 *Summary of settings
-*Plugin-alpha, Limit by days = 28, Limit by count=100, Limit by size = 0*
-*Plugin-beta, Limit by days = 0, Limit by count=100, Limit by size = 0*
-*Plugin-prod, Limit by days = 0, Limit by count=526, Limit by size = 0*
+
+*Plugin-alpha:* Limit by days = 28, Limit by count=100, Limit by size = 0
+
+*Plugin-beta:* Limit by days = 0, Limit by count=500, Limit by size = 0
+
+*Plugin-prod:* Retain all files -  Limit by days = 0, Limit by count=0, Limit by size = 0  
+
 *Using a "0" means "disabled"*
 
 image:10cloudsmith.jpg[10cloudsmith.jpg]
