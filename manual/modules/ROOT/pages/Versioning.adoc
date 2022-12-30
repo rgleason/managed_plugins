@@ -72,8 +72,8 @@ If a git tag pointing to the commit being built exists, the tag is used
 as version. This means that the tag completely overrides both the base version
 defined in Plugin.cmake and the automatic build info.
 
-That is, if the git tag is _1.0.3-alpha1_ the version in _1.0.3-alpha1_,
-whatever the contents of Plugin.cmake.
+That is, if the git tag is _1.0.3-alpha1_ the version used is _1.0.3-alpha1_,
+mo matter what the contents of Plugin.cmake are set to.
 
 
 == Cloudsmith Uploads
