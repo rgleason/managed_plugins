@@ -46,11 +46,11 @@ Then install the build dependencies using something like
 
     $ flatpak remote-add --user --if-not-exists \
           flathub https://flathub.org/repo/flathub.flatpakrepo
-    $ flatpak install --user flathub org.freedesktop.Platform//20.08
-    $ flatpak install --user flathub org.freedesktop.Sdk//20.08
+    $ flatpak install --user flathub org.freedesktop.Platform//22.08
+    $ flatpak install --user flathub org.freedesktop.Sdk//22.08
     $ flatpak install --user flathub org.opencpn.OpenCPN
 
-20.08 is the runtime version which indeed is 20.08 at the time of
+22.08 is the runtime version which indeed is 22.08 at the time of
 writing. Review the _flatpak/org.opencpn.*yaml_ file to check this,
 look for `runtime-version`.
 
