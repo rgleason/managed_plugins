@@ -106,15 +106,20 @@ $ git commit -m "Merging auto branch into Beta"
 
 === Cleaning up old metadata
 
-Normally, only the last version of the plugin should be available in the
-catalog. The command
+Some metadata for older versions is "frozen". 
+This means that these versions are kept as-is without changes when new
+versions are built. 
+
+However, for other versions normally only the last version should be used.
+The command
 
 ....
     $ ls -lt metadata/my-plugin*
 ....
 
-lists all metadata files for given plugin in date order. Use `git rm` to
-remove all older files. When completed, commit using for example:
+lists all metadata files for given plugin in date order. 
+Use `git rm` to remove all older files besides those which are frozen.
+When completed, commit using for example:
 ....
     $ git commit -m "Removing obsoleted metadata."
 ....
