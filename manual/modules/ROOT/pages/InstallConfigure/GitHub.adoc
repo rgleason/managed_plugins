@@ -2,11 +2,12 @@
 
 == Final checks
 
-Have the environment variables been entered for CircleCI?
+Have the environment variables been entered for CircleCI and possible other 
+builders?
 
 xref:../InstallConfigure/Builders/CircleCI.adoc[CircleCI]
 
-xref:../InstallConfigure/Builders/Drone.adoc[Drone] or: xref:../InstallConfigure/Builders/Travis.adoc[Travis]
+xref:../InstallConfigure/Builders/Travis.adoc[Travis]
 
 xref:../InstallConfigure/Builders/Appveyor.adoc[Appveyor]
 
