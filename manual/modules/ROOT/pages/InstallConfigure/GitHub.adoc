@@ -57,6 +57,8 @@ xref:Useful-Stuff.adoc[using this technique]
 Check that the builders pushes metadata to the OpenCPN/plugins fork
 
     $ cd plugins
+    $ git remote update origin
+    $ git fetch origin auto:auto
     $ git log --oneline auto~10..auto
 
 This lists the 10 last commit to the auto branch. You should see something

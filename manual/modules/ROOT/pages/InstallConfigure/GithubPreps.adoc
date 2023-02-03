@@ -5,7 +5,8 @@ link:https://github.com/OpenCPN/plugins[OpenCPN/plugins]. During
 builds, metadata files are automatically pushed to this clone. This page
 describes how this is configured. 
 
-The result is the two environment variables GIT_REPO and GIT_KEY_PASSWORD.
+The result of the configuration is the two environment variables GIT_REPO and
+GIT_KEY_PASSWORD.
 These variables are used when configuring builders.
 
 If maintaining several plugins, this is a one time setup. If there already

@@ -2,7 +2,8 @@
 
 https://cloudsmith.io/[Cloudsmith Website]
 
-Cloudsmith is the deployment repository which hosts the tarballs and metadata files that form the heart of the managed plugin system.
+Cloudsmith is the deployment repository which hosts the tarballs that form
+the heart of the managed plugin system.
 
 image:1cloudsmith.jpg[1cloudsmith.jpg]
 
