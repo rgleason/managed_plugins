@@ -2,8 +2,7 @@
 
 == Final checks
 
-Have the environment variables been entered for CircleCI, Drone,
-Travis and Appveyor?
+Have the environment variables been entered for CircleCI?
 
 xref:../InstallConfigure/Builders/CircleCI.adoc[CircleCI]
 
