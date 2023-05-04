@@ -96,30 +96,13 @@ image:6cloudsmith.jpg[6cloudsmith.jpg]
 
 image:7cloudsmith.jpg[7cloudsmith.jpg]
 
-*While we are working with Cloudsmith it is useful to adjust the
-lifecyle setting for the repositories. Use Admin Access to each repo.*
+*Retention life of the repositories*
 
-image:8cloudsmith.jpg[8cloudsmith.jpg]
+Prior to May 2022 it was possible to set up an *Artifact Lifecycle*. A defined number of packages would be retained. If that number was exceeded older packages would be deleted. 
 
-*The only setting needed is "Artifact Lifecycle".*
-
-image:9cloudsmith.jpg[9cloudsmith.jpg]
-
-*Disable the `Limit By Days' (set to "0") and press the Update button.*
-
-*Summary of settings
-
-*Plugin-alpha:* Limit by days = 28, Limit by count=100, Limit by size = 0
-
-*Plugin-beta:* Limit by days = 0, Limit by count=500, Limit by size = 0
-
-*Plugin-prod:* Retain all files -  Limit by days = 0, Limit by count=0, Limit by size = 0  
-
-*Using a "0" means "disabled"*
+Any new repositories or those without a lifecycle will allow any number of packages being added. Tarballs and metadata files are retained indefinitely. Be aware that there is a limit of 50gb storage for any organisation. Also a bandwidth of 200gb a month applies for uploads. This is reset to zero at the start of a new month.
 
 image:10cloudsmith.jpg[10cloudsmith.jpg]
-
-*Repeat for the beta and prod (production) repositories.*
 
 *While using Cloudsmith make a note of the API Key. This can be
 copy/pasted to a file on your PC for use later.*
