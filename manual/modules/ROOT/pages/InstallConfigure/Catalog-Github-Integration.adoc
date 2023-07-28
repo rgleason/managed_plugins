@@ -88,7 +88,7 @@ https://rick.cogley.info/post/update-your-forked-repository-directly-on-github/[
 or on the command line:
 ....
 $ git remote update upstream
-$ git checkout Beta
+$ git checkout --track origin/Beta
 $ git rebase upstream/Beta
 ....
 
