@@ -98,11 +98,13 @@ image:7cloudsmith.jpg[7cloudsmith.jpg]
 
 *Retention life of the repositories*
 
-Prior to May 2022 it was possible to set up an *Artifact Lifecycle*. A defined number of packages would be retained. If that number was exceeded older packages would be deleted. 
+For repos within the Cloudsmith opencpn organisation it is possible to use the setting *Artifact Lifecycle*.
 
-Any new repositories or those without a lifecycle will allow any number of packages being added. Tarballs and metadata files are retained indefinitely. Be aware that there is a limit of 50gb storage for any organisation. Also a bandwidth of 200gb a month applies for uploads. This is reset to zero at the start of a new month.
+image:9cloudsmith.jpg[9cloudsmith.jpg]
 
-image:10cloudsmith.jpg[10cloudsmith.jpg]
+Repeat for the beta and prod (production) repositories.
+
+Repos outside the opencpn organisation cannot use the lifecycle without a subscription (non-free). Any number of packages can be added to the repos. Tarballs and metadata files are retained indefinitely. Be aware that in this case there is a limit of 50gb storage. Also a bandwidth of 200gb a month applies for uploads. This is reset to zero at the start of a new month.
 
 *While using Cloudsmith make a note of the API Key. This can be
 copy/pasted to a file on your PC for use later.*
