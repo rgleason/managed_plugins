@@ -96,7 +96,7 @@ image:6cloudsmith.jpg[6cloudsmith.jpg]
 
 image:7cloudsmith.jpg[7cloudsmith.jpg]
 
-*Retention life of the repositories*
+== Retention life of the repositories
 
 For repos within the Cloudsmith opencpn organisation it is possible to use the setting *Artifact Lifecycle*.
 
